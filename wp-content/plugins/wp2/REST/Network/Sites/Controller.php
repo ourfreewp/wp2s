@@ -141,7 +141,7 @@ class Controller
 
         // Get the updated site data with settings
         $updated_site = get_site($site_id);
-
+        
         $site_data    = $this->get_site_with_settings($updated_site);
 
         return rest_ensure_response($site_data);

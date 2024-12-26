@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Name: Extract Data Tools as Items
  */
@@ -6,23 +7,22 @@
 function newsplicity_template_items_tools()
 {
 
-	$template_data_json = get_option('newsplicity_template_data');
+    $template_data_json = get_option('newsplicity_template_data');
 
-	$template_data = json_decode($template_data_json);
+    $template_data = json_decode($template_data_json);
 
-	$items = $template_data->tools;
+    $items = $template_data->tools;
 
-	$formatted_items = [];
+    $formatted_items = [];
 
-	foreach ($items as $item) {
+    foreach ($items as $item) {
 
-		$item_name = $item->name;
+        $item_name = $item->name;
 
-		$formatted_items[] = [
-			'title' => $item_name ? $item_name : 'No Name',
-		];
+        $formatted_items[] = [
+            'title' => $item_name ? $item_name : 'No Name',
+        ];
+    }
 
-	}
-
-	return $formatted_items;
+    return $formatted_items;
 }

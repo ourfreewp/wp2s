@@ -1,0 +1,57 @@
+body button.wsf-button.wsf-button-primary {
+	background-color: var(--wp--preset--color--background);
+	border-color: var(--wp--preset--color--main);
+	color: var(--wp--preset--color--main);
+}
+
+
+.vsg-single-row {
+	margin-block-start: auto;
+	overflow: hidden;
+}
+
+.vsg-single-row .wsf-fields {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.vsg-single-row .wsf-field-wrapper {
+	margin: auto;
+}
+
+
+.vsg-single-row .wsf-tile {
+	padding: 0;
+}
+
+.vsg-single-row .wsf-label {}
+
+.vsg-single-row .wsf-grid {
+	margin: auto;
+	gap: 1rem;
+	flex-wrap: nowrap;
+}
+
+.vsg-single-row .wsf-grid .wsf-field-wrapper:first-of-type {
+	-webkit-box-flex: 0 !important;
+	-ms-flex: 1 !important;
+	flex: 1 !important;
+	max-width: 100% !important;
+}
+
+.vsg-single-row .wsf-label {
+	display: none;
+}
+
+.vsg-single-row .wsf-help {
+	display: none;
+}
+
+.vsg-single-row input[type="email"].wsf-field {
+	border-color: var(--wp--preset--color--main);
+	background-color: transparent;
+}
+
+.vsg-single-row input[type="email"]::placeholder {
+	font-size: small;
+}

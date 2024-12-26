@@ -1,0 +1,308 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth;
+}
+
+abbr[title] {
+  text-decoration: underline dotted;
+  cursor: help;
+  text-decoration-skip-ink: none;
+}
+
+address {
+  margin-bottom: var(--wp--preset--spacing--30);
+  font-style: normal;
+  line-height: inherit;
+}
+
+ol,
+ul {
+  padding-left: var(--wp--preset--spacing--40);
+}
+
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: var(--wp--preset--spacing--30);
+}
+
+ol ol,
+ul ul,
+ol ul,
+ul ol {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: var(--wp--custom--font-weight--bold);
+}
+
+dd {
+  margin-bottom: var(--wp--preset--spacing--20);
+  margin-left: 0; 
+}
+
+blockquote {
+  margin: 0;
+}
+
+b,
+strong {
+  font-weight: var(--wp--custom--font-weight--bold);
+}
+
+small {
+  font-size: var(--wp--preset--font-size--sm);
+}
+
+mark {
+  padding: .2em;
+  color: var(--wp--custom--color--mark--text);
+  background-color: var(--wp--custom--color--mark--bg);
+}
+
+sub,
+sup {
+  position: relative;
+  font-size: var(--wp--preset--font-size--xs);
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sub { bottom: -.25em; }
+sup { top: -.5em; }
+
+a:not([href]):not([class]) {
+  &,
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--wp--custom--font-family--code);
+  font-size: var(--wp--custom--font-size--code);
+}
+
+pre {
+  display: block;
+  margin-top: 0; 
+  margin-bottom: var(--wp--preset--spacing--30);
+  overflow: auto; 
+  font-size: var(--wp--custom--font-size--code);
+  color: var(--wp--custom--color--pre);
+
+  code {
+    font-size: var(--wp--preset--font-size--code);
+    color: inherit;
+    word-break: normal;
+  }
+}
+
+code {
+  font-size: var(--wp--preset--font-size--code);
+  color: var(--wp--custom--color--code);
+  word-wrap: break-word;
+
+  a > & {
+    color: inherit;
+  }
+}
+
+kbd {
+  padding: var(--wp--preset--spacing--20) var(--wp--preset--spacing--40);
+  font-size: var(--wp--custom--font-size--sm);
+  color: var(--wp--custom--color--kbd--text);
+  background-color: var(--wp--custom--color--kbd--bg);
+  border-radius: var(--wp--custom--preset--border-radius--sm);
+
+  kbd {
+    padding: 0;
+    font-size: inherit;
+    font-weight: var(--wp--custom--font-weight--bold);
+  }
+}
+
+figure {
+  margin: 0;
+}
+
+
+img,
+svg {
+  vertical-align: middle;
+  max-width: 100%;
+}
+
+table {
+  caption-side: bottom;
+  border-collapse: collapse;
+}
+
+caption {
+  padding-top: 0;
+  padding-bottom: 0;
+  color: var(--wp--custom--color--caption);
+  text-align: left;
+}
+
+th {
+  font-weight: var(--wp--custom--font-weight--bold);
+  text-align: inherit; // 2
+  text-align: -webkit-match-parent; // 3
+}
+
+thead,
+tbody,
+tfoot,
+tr,
+td,
+th {
+  border-color: inherit;
+  border-style: solid;
+  border-width: 0;
+}
+
+label {
+  display: inline-block; 
+}
+
+button {
+  border-radius: 0;
+}
+
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+input,
+button,
+select,
+optgroup,
+textarea {
+  margin: 0; // 1
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+select {
+  text-transform: none;
+}
+
+[role="button"] {
+  cursor: pointer;
+}
+
+select {
+  word-wrap: normal;
+  &:disabled {
+    opacity: 1;
+  }
+}
+
+
+[list]:not([type="date"]):not([type="datetime-local"]):not([type="month"]):not([type="week"]):not([type="time"])::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border-style: none;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  min-width: 0;
+  padding: 0; 
+  margin: 0; 
+  border: 0;
+}
+
+legend {
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0;
+  font-size: var(--wp--preset--font-size--sm);
+  font-weight: var(--wp--custom--font-weight--bold);
+  line-height: inherit;
+
+  + * {
+    clear: left;
+  }
+}
+
+::-webkit-datetime-edit-fields-wrapper,
+::-webkit-datetime-edit-text,
+::-webkit-datetime-edit-minute,
+::-webkit-datetime-edit-hour-field,
+::-webkit-datetime-edit-day-field,
+::-webkit-datetime-edit-month-field,
+::-webkit-datetime-edit-year-field {
+  padding: 0;
+}
+
+::-webkit-inner-spin-button {
+  height: auto;
+}
+
+[type="search"] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+::file-selector-button {
+  font: inherit;
+  -webkit-appearance: button;
+}
+
+output {
+  display: inline-block;
+}
+
+iframe {
+  border: 0;
+}
+
+summary {
+  display: list-item;
+  cursor: pointer;
+}
+
+progress {
+  vertical-align: baseline;
+}
+
+[hidden] {
+  display: none !important;
+}

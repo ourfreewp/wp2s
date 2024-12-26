@@ -1,0 +1,80 @@
+.wp-block-oddnews-post-slideshow.slideshow {
+    min-height: 100vh;
+
+    .slideshow__inner {}
+
+
+    .splide {
+
+        &.slideshow__primary {
+
+
+            @include media-breakpoint-down(md) {
+                .splide__slide__container {
+                    img {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+
+            @include media-breakpoint-up(md) {
+                .splide__slide {
+                    padding: var(--wp--preset--spacing--50) 0;
+                    background-color: var(--wp--preset--color--light);
+                }
+
+                .splide__slide__container {
+                    position: relative;
+                    width: 100%;
+
+                    &::before {
+                        display: block;
+                        padding-top: calc(9 / 16* 100%);
+                        content: "";
+                    }
+
+                    .splide__slide__container__inner {
+
+                        display: flex;
+                        flex-direction: column;
+
+                        img {   
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            height: 100%;
+                            width: auto;
+                            margin: auto;
+                        }
+
+                    }
+                }
+
+
+            }
+
+            .splide__slide__attribution {
+                z-index: 1;
+                width: 100%;
+                background: #0a090992;
+                color: white;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: .3rem;
+                padding: 5px 10px;
+                font-family: var(--wp--preset--font-family--lato);
+                font-size: var(--wp--preset--font-size--post-meta);
+            }
+        }
+
+        &.slideshow__secondary {}
+
+        &.slideshow__tertiary {}
+
+    }
+
+}

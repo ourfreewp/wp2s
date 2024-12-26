@@ -1,3 +1,4 @@
-wp-content/debug.log
-wp-includes/
+debug.log
 wp-config.php
+wp-includes/
+node_modules/

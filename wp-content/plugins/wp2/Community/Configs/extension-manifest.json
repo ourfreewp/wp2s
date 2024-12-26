@@ -1,0 +1,22 @@
+[
+  {
+    "pluginPath": "classic-editor/classic-editor.php",
+    "className": "WP2\\Community\\Extensions\\ClassicEditor\\SSOEmbedExtension"
+  },
+  {
+    "pluginPath": "ws-forms/ws-forms.php",
+    "className": "WP2\\Community\\Extensions\\WSForms\\SSOEmbedExtension"
+  },
+  {
+    "pluginPath": "blockstudio/blockstudio.php",
+    "className": "WP2\\Community\\Extensions\\Blockstudio\\BlocksStudioExtension"
+  },
+  {
+    "pluginPath": "blockstudio/blockstudio.php",
+    "className": "WP2\\Community\\Extensions\\Blockstudio\\AssetsStudioExtension"
+  },
+  {
+    "pluginPath": "blockstudio/blockstudio.php",
+    "className": "WP2\\Community\\Extensions\\Blockstudio\\SSOEmbedExtension"
+  }
+]

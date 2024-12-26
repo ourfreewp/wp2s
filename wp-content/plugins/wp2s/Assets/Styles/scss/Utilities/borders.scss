@@ -1,0 +1,124 @@
+.border-last-child-end-0 {
+  >:last-child {
+    border-right: none !important;
+  }
+}
+
+.border-last-of-type-end-0 {
+  &:last-of-type {
+    border-right: none !important;
+  }
+
+}
+
+
+.border-child-end {
+  > * {
+    border-right: var(--wp--custom--border--width) var(--wp--custom--border--style) var(--wp--custom--border--color) !important;
+  }
+}
+
+.border-last-item-bottom-0 {
+  >.border-bottom:last-child {
+    border-bottom: 0 !important;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .border-top-sm-0 {
+    border-top: none !important;
+  }
+
+  .border-end-sm-0 {
+    border-right: none !important;
+  }
+
+  .border-bottom-sm-0 {
+    border-bottom: none !important;
+  }
+
+  .border-start-sm-0 {
+    border-left: none !important;
+  }
+
+}
+
+@include media-breakpoint-up(md) {
+
+  .border-top-md-0 {
+    border-top: none !important;
+  }
+
+  .border-end-md-0 {
+    border-right: none !important;
+  }
+
+  .border-bottom-md-0 {
+    border-bottom: none !important;
+  }
+
+  .border-start-md-0 {
+    border-left: none !important;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+
+  .border-top-lg-0 {
+    border-top: none !important;
+  }
+
+  .border-end-lg-0 {
+    border-right: none !important;
+  }
+
+  .border-bottom-lg-0 {
+    border-bottom: none !important;
+  }
+
+  .border-start-lg-0 {
+    border-left: none !important;
+  }
+
+  .border-lg-end {
+    border-right: var(--wp--custom--border--width) var(--wp--custom--border--style) var(--wp--custom--border--color) !important;
+  }
+
+  .border-lg-top {
+    border-top: var(--wp--custom--border--width) var(--wp--custom--border--style) var(--wp--custom--border--color) !important;
+  }
+
+  .border-last-child-lg-end-0 {
+    >:last-child {
+      border-right: none !important;
+    }
+  }
+
+
+  .border-first-child-lg-start-0 {
+    >:first-child {
+      border-left: none !important;
+    }
+  }
+
+}
+
+@include media-breakpoint-up(xl) {
+
+  .border-top-xl-0 {
+    border-top: none !important;
+  }
+
+  .border-end-xl-0 {
+    border-right: none !important;
+  }
+
+  .border-bottom-xl-0 {
+    border-bottom: none !important;
+  }
+
+  .border-start-xl-0 {
+    border-left: none !important;
+  }
+
+}

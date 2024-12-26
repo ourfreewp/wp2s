@@ -1,0 +1,9 @@
+.min-vh-window {
+	min-height: calc(100vh - 100px);
+}
+
+@include media-breakpoint-up(lg) {
+	.mw-lg-75px {
+		max-width: 75px;
+	}
+}

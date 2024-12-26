@@ -1,0 +1,140 @@
+.font-code {
+	font-family: var(--wp--custom--font-family--code);
+}
+
+.font-heading {
+	font-family: var(--wp--custom--font-family--heading);
+}
+
+.font-body {
+	font-family: var(--wp--custom--font-family--body);
+}
+
+.font-meta {
+	font-family: var(--wp--custom--font-family--meta);
+}
+
+%line-clamp {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.line-clamp-0 {
+	@extend %line-clamp;
+	-webkit-line-clamp: none;
+}
+
+.line-clamp-1 {
+	@extend %line-clamp;
+	-webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+	@extend %line-clamp;
+	-webkit-line-clamp: 2;
+}
+
+.line-clamp-3 {
+	@extend %line-clamp;
+	-webkit-line-clamp: 3;
+}
+
+
+@include media-breakpoint-up(sm) {
+
+	.line-clamp-sm-0 {
+		@extend %line-clamp;
+		-webkit-line-clamp: none;
+	}
+
+	.line-clamp-sm-1 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 1;
+	}
+
+	.line-clamp-sm-2 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 2;
+	}
+
+	.line-clamp-sm-3 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 3;
+	}
+ 
+
+}
+
+@include media-breakpoint-up(md) {
+
+	.line-clamp-md-0 {
+		@extend %line-clamp;
+		-webkit-line-clamp: none;
+	}
+
+	.line-clamp-md-1 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 1;
+	}
+
+	.line-clamp-md-2 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 2;
+	}
+
+	.line-clamp-md-3 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 3;
+	}
+
+  
+}
+
+@include media-breakpoint-up(lg) {
+
+	.line-clamp-lg-0 {
+		@extend %line-clamp;
+		-webkit-line-clamp: none;
+	}
+
+	.line-clamp-lg-1 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 1;
+	}
+
+	.line-clamp-lg-2 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 2;
+	}
+
+	.line-clamp-lg-3 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 3;
+	}
+
+}
+
+@include media-breakpoint-up(xl) {
+
+	.line-clamp-xl-0 {
+		@extend %line-clamp;
+		-webkit-line-clamp: none;
+	}
+
+	.line-clamp-xl-1 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 1;
+	}
+
+	.line-clamp-xl-2 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 2;
+	}
+
+	.line-clamp-xl-3 {
+		@extend %line-clamp;
+		-webkit-line-clamp: 3;
+	}
+
+}

@@ -1,0 +1,21 @@
+$enable-caret: false;
+$enable-rounded: true;
+$enable-grid-classes: false;
+$enable-container-classes: false;
+$enable-cssgrid: true;
+$enable-button-pointers: true;
+$enable-rfs: false;
+$enable-negative-margins: false;
+$enable-deprecation-messages: false;
+$enable-important-utilities: true;
+$enable-dark-mode: false;
+
+$spacers: (
+  "0": 0
+);
+
+
+$theme-colors: (
+  "primary": #081d2b,
+  "secondary": #0a486c,
+);

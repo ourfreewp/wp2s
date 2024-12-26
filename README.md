@@ -6,35 +6,117 @@
 
 ## Structure
 
-- **wp-config.php**  
-  Core configuration settings, including database connections and authentication keys.
+### Themes (/wp-content/themes)
+Directory containing all WordPress themes, which control the look and feel of the site.
 
-- **wp-content/**  
-  Primary directory for user content, including plugins, themes, and uploads.
+#### MUs (/wp-content/mu-plugins)
+The `mu-plugins` directory contains functionality that is always enabled and cannot be disabled from the WordPress admin area.
 
-- **wp-content/debug.log**  
-  Log file for debugging purposes, capturing errors and warnings when `WP_DEBUG` is enabled.
+### Plugins (/wp-content/plugins)
+Directory containing all WordPress plugins, which extend or modify site functionality.
 
-- **wp-content/plugins/**  
-  Directory containing all WordPress plugins, which extend or modify site functionality.
+#### WP2s (/wp-content/plugins/wp2-*)
+The `wp2-*` directory contains the functionality assigend to each zone in the WP2S Network. Each WP2 is a zone, and each zone has a unique `textdomain` directory.
 
-- **wp-content/plugins/textdomain-***  
-  Custom plugins prefixed with `textdomain-`, providing specific functionalities or modules for the site.
+#### Extensions (/wp-content/plugins/extend-*)
+The `extend-*` directory contains the functionality that extends the core functionality of existing plugins. 
 
-- **wp-content/plugins/extend-***  
-  Plugins prefixed with `extend-textdomain`, designed to extend or enhance existing features provided by other plugins.
+## Components
 
-- **wp-content/themes/**  
-  Directory containing all WordPress themes, which dictate the site’s appearance and layout.
+### WP2S Theme (/wp-content/themes/wp2s)
+The `textdomain` directory contains the primary theme for the installation.
 
-- **wp-content/themes/textdomain**  
-    Custom theme named `textdomain`, providing the site’s design and layout.
+### WP2S Plugin (/wp-content/plugins/wp2s)
+The `textdomain` directory contains the core files for the installation.
 
-- **wp-content/mu-plugins/**  
-    Directory for must-use plugins, which are always active and loaded before regular plugins.
+### WP2 Core (/wp-content/plugins/wp2)
 
-- **wp-content/mu-plugins/examplepress**  
-    Custom must-use plugin named `textdomain`, containing essential site functionalities and configurations.
+### WP2 Express (/wp-content/plugins/wp2-express)
 
-- **wp-content/mu-plugins/textdomain.php**  
-    Main file for the custom must-use plugin, initializing the plugin and its components.
+## Zones
+A zone is a collection of resources that share a common purpose or theme. Each zone has a unique directory that cooresponds to top-level domain that is generally available for registration.
+
+- [Bio](#bio)
+- [Blog](#blog)
+- [Community](#community)
+- [Contact](#contact)
+- [Dev](#dev)
+- [Express](#express)
+- [Health](#health)
+- [Legal](#legal)
+- [Link](#link)
+- [Marketing](#marketing)
+- [Media](#media)
+- [One](#one)
+- [Pub](#pub)
+- [REST](#rest)
+- [Run](#run)
+- [Sh](#sh)
+- [Shop](#shop)
+- [Singles](#singles)
+- [Studio](#studio)
+- [Style](#style)
+- [Wiki](#wiki)
+- [Work](#work)
+
+### Bio
+
+### Blog
+
+### Community
+
+### Contact
+
+### Dev
+
+### Express
+
+### Health
+
+### Legal
+
+### Link
+
+### Marketing
+
+### Media
+
+### One
+
+### Pub
+
+### REST
+
+### Shop
+
+### Run
+
+### Sh
+
+### Shop
+
+### Singles
+
+### Studio
+
+### Style
+
+### Wiki
+
+### Work
+
+## Extensions
+
+### Altis Accelerate
+
+### Blockstudio
+
+### Co-Author Plus
+
+### Greenshift
+
+### ShopWP
+
+### Slim SEO
+
+### WS Form

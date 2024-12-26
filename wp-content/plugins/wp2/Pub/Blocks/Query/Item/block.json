@@ -1,0 +1,87 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/query-item",
+	"title": "Query Item",
+	"category": "blockstudio",
+	"icon": "code-standards",
+	"supports": {
+		"align": [
+			"full",
+			"wide"
+		],
+		"customClassName": true,
+		"renaming": true
+	},
+	"ancestor": [
+		"onthewater/query"
+	],
+	"blockstudio": {
+		"attributes": [
+			{
+				"label": "HTML Tag",
+				"id": "tag",
+				"type": "text",
+				"default": "div",
+				"fallback": "div",
+				"help": "The HTML tag to use for this block. Default is 'div'."
+			},
+			{
+				"label": "Query",
+				"type": "select",
+				"id": "query",
+				"allowNull": "Select query",
+				"options": [
+					{
+						"label": "Default",
+						"value": "default"
+					},
+					{
+						"label": "Front Page Featured Posts",
+						"value": "front_page_featured_posts"
+					},
+					{
+						"label": "Front Page Editors' Picks",
+						"value": "front_page_editors_picks"
+					},
+					{
+						"label": "Front Page Billboards",
+						"value": "front_page_billboards"
+					}
+				]
+			},
+			{
+				"label": "Template",
+				"type": "select",
+				"id": "template",
+				"allowNull": "Select template",
+				"options": [
+					{
+						"label": "Default",
+						"value": "default"
+					},
+					{
+						"label": "Alpha",
+						"value": "alpha"
+					},
+					{
+						"label": "Bravo",
+						"value": "bravo"
+					},
+					{
+						"label": "Charlie",
+						"value": "charlie"
+					},
+					{
+						"label": "Delta",
+						"value": "delta"
+					},
+					{
+						"label": "Echo",
+						"value": "echo"
+					}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,13 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "newsplicity/coda-object-schema",
+   "title": "Coda Object Schema",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "blockstudio": {
+      "refreshOn": [
+         "save"
+      ]
+   }
+}

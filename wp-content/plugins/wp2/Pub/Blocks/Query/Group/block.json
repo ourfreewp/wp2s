@@ -1,0 +1,36 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/query",
+	"title": "Query",
+	"description": "A block that establishes the context for a new custom query.",
+	"category": "blockstudio",
+	"icon": "code-standards",
+	"supports": {
+		"align": [
+			"full",
+			"wide"
+		],
+		"customClassName": true,
+		"renaming": true
+	},
+	"allowedBlocks": [
+		"core/paragraph",
+		"core/heading",
+		"core/separator",
+		"core/group",
+		"custom/query-item"
+	],
+	"blockstudio": {
+		"attributes": [
+			{
+				"label": "HTML Tag",
+				"id": "tag",
+				"type": "text",
+				"default": "div",
+				"fallback": "div",
+				"help": "The HTML tag to use for this block. Default is 'div'."
+			}
+		]
+	}
+}

@@ -1,0 +1,28 @@
+# Node modules directory (ignore at root level)
+node_modules/
+
+# TypeScript output directory
+dist/
+
+# Environment files for sensitive data
+*.env
+
+# Ignore .coda.json and .coda-pack.json files in all pack directories
+packs/*/.coda.json
+packs/*/.coda-pack.json
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# macOS system files
+.DS_Store
+
+# IDE/editor directories
+.vscode/
+.idea/
+
+# Ignore local Pack metadata
+.coda-pack.json
+.coda.json

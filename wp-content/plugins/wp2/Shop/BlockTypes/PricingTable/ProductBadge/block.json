@@ -1,0 +1,15 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "webmultipliers/pricing-table-product-badge",
+   "title": "Product Badge",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "ancestor": [
+      "webmultipliers/pricing-table-product"
+   ],
+   "usesContext": [
+      "webmultipliers/pricing-table-product"
+   ],
+   "blockstudio": true
+}

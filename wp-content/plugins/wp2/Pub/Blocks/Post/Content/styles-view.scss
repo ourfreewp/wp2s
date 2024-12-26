@@ -1,0 +1,25 @@
+.wp-block-post-content {
+	>p,
+	>p.has-text-align-center,
+	>p.has-text-align-right,
+	>.wp-block-details,
+	>.wp-block-list {
+
+		&:where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+			max-width: 40rem;
+			margin-left: 0 !important;
+			margin-right: auto !important;
+		}
+	}
+
+	.wp-block-pullquote,
+	.wp-block-quote,
+	.wp-block-embed,
+	.wp-block-image {
+		&:not(.alignleft):not(.alignright):not(.alignfull) {
+			margin-left: 0;
+			margin-right: 0;
+			max-width: 100%;
+		}
+	}
+}

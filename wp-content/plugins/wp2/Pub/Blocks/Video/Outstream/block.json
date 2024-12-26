@@ -1,0 +1,46 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "otw/outstream-player",
+    "title": "Outstream Player",
+    "category": "blockstudio",
+    "icon": "star-filled",
+    "blockstudio": {
+        "attributes": [
+            {
+                "label": "Type",
+                "type": "select",
+                "id": "player_type",
+                "options": [
+                    {
+                        "label": "JW Player",
+                        "value": "jwplayer"
+                    }
+                ],
+                "allowNull": false,
+                "default": "jwplayer",
+                "fallback": "jwplayer"
+            },
+            {
+                "label": "Id",
+                "type": "select",
+                "id": "player_id",
+                "options": [
+                    {
+                        "label": "Fishing Report",
+                        "value": "9NydjPBo"
+                    },
+                    {
+                        "label": "OTW Bass",
+                        "value": "AIMvNPBp"
+                    },
+                    {
+                        "label": "Fishing Kayak Buyer's Guide",
+                        "value": "mOEg9gMl"
+                    }
+                ],
+                "allowNull": true
+            }
+        ]
+    }
+}

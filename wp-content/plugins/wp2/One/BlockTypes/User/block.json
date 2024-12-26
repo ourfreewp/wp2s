@@ -1,0 +1,90 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "oddnews/user",
+	"title": "User",
+	"category": "blockstudio",
+	"icon": "dashicons-admin-users",
+	"supports": {
+		"__experimentalBorder": {
+			"radius": true,
+			"color": true,
+			"width": true,
+			"style": true,
+			"__experimentalDefaultControls": {
+				"width": true,
+				"color": true,
+				"style": true,
+				"radius": true
+			}
+		},
+		"align": [
+			"full",
+			"wide"
+		],
+		"background": {
+			"backgroundImage": true,
+			"backgroundSize": true
+		},
+		"customClassName": true,
+		"color": {
+			"background": true,
+			"button": true,
+			"heading": true,
+			"link": true,
+			"text": true
+		},
+		"dimensions": {
+			"aspectRatio": true,
+			"minHeight": true
+		},
+		"renaming": true,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		},
+		"anchor": true
+	},
+	"blockstudio": {
+		"attributes": [
+			{
+				"type": "toggle",
+				"label": "Inherit",
+				"id": "inherit",
+				"fallback": true,
+				"default": true
+			},
+			{
+				"type": "select",
+				"id": "option",
+				"label": "Option",
+				"populate": {
+					"type": "query",
+					"query": "posts",
+					"arguments": {
+						"post_type": "page",
+						"meta_key": "_wp_page_template",
+						"meta_value": "custom-template-user-page",
+						"numberposts": -1,
+						"post_status": "all",
+						"orderby": "title"
+					},
+					"returnFormat": {
+						"value": "post_name",
+						"label": "post_title"
+					}
+				},
+				"allowNull": "Select an option",
+				"conditions": [
+					[
+						{
+							"id": "inherit",
+							"operator": "!=",
+							"value": true
+						}
+					]
+				]
+			}
+		]
+	}
+}

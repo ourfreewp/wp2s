@@ -1,0 +1,15 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "webmultipliers/pricing-table-product-image",
+   "title": "Product Image",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "ancestor": [
+      "pricing-table-product"
+   ],
+   "usesContext": [
+      "webmultipliers/pricing-table-product"
+   ],
+   "blockstudio": true
+}

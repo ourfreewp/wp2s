@@ -1,0 +1,43 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/post-dates",
+	"title": "Post Dates",
+	"category": "blockstudio",
+	"icon": "clock",
+	"supports": {
+		"ariaLabel": true,
+		"color": {
+			"background": true,
+			"text": true
+		},
+		"align": [
+			"left",
+			"center",
+			"right",
+			"full",
+			"wide"
+		],
+		"customClassName": true,
+		"typography": {
+			"fontSize": true,
+			"lineHeight": true,
+			"textAlign": true,
+			"__experimentalFontFamily": true,
+			"__experimentalLetterSpacing": true,
+			"__experimentalFontWeight": true
+		}
+	},
+	"blockstudio": {
+		"attributes": [
+			{
+				"id": "prefixPublished",
+				"type": "richtext"
+			},
+			{
+				"id": "prefixModified",
+				"type": "richtext"
+			}
+		]
+	}
+}

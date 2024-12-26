@@ -1,0 +1,9 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "newsplicity/docs-toc",
+   "title": "Docs Table of Contents",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "blockstudio": true
+}

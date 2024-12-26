@@ -1,0 +1,12 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "webmultipliers/pricing-table-product-actions",
+   "title": "Product Actions",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "ancestor": [
+      "pricing-table-product"
+   ],
+   "blockstudio": true
+}

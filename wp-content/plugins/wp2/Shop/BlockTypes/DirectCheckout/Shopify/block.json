@@ -1,0 +1,78 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"name": "freewp-shopwp/button-direct-checkout",
+	"title": "Direct Checkout",
+	"category": "text",
+	"icon": "star-filled",
+	"description": "A button that allows the user to checkout directly from the product page.",
+	"script": [
+		"shopwp-public"
+	],
+	"blockstudio": {
+		"attributes": [
+			{
+				"type": "richtext",
+				"id": "button_text",
+				"default": "Buy Now",
+				"fallback": "Buy Now"
+			},
+			{
+				"label": "Merchandise Id",
+				"id": "merchandiseId",
+				"type": "text",
+				"help": "The ID of the merchandise that the buyer intends to purchase."
+			},
+			{
+				"label": "Quantity",
+				"id": "quantity",
+				"type": "number",
+				"help": "The quantity of the merchandise that the buyer intends to purchase.",
+				"default": 1,
+				"fallback": 1
+			},
+			{
+				"label": "Note",
+				"id": "note",
+				"type": "richtext"
+			},
+			{
+				"label": "Attributes",
+				"id": "attributes",
+				"type": "repeater",
+				"max": 250,
+				"help": "An array of key-value pairs that contains additional information about the cart. The input must not contain more than 250 values.",
+				"attributes": [
+					{
+						"label": "Key",
+						"id": "key",
+						"type": "text",
+						"help": "The key of the attribute"
+					},
+					{
+						"label": "Value",
+						"id": "value",
+						"type": "text",
+						"help": "The value of the attribute"
+					}
+				]
+			},
+			{
+				"id": "linkTarget",
+				"label": "Link Target",
+				"type": "radio",
+				"default": "_self",
+				"fallback": "_self",
+				"options": [
+					{
+						"label": "Same Window",
+						"value": "_self"
+					},
+					{
+						"label": "New Window",
+						"value": "_blank"
+					}
+				]
+			}
+		]
+	}
+}

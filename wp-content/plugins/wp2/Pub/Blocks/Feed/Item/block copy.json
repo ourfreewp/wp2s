@@ -1,0 +1,15 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "freewp/activity-feed-item",
+    "title": "Activity Feed Item",
+    "category": "blockstudio",
+    "parent": [
+        "core/post-template"
+    ],
+    "ancestor": [
+        "freewp/activity-feed"
+    ],
+    "icon": "star-filled",
+    "blockstudio": true
+ }

@@ -1,0 +1,9 @@
+.wp-block-onthewater-post-dates {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	> p {
+		font-family: inherit;
+		margin:0;
+	}
+}

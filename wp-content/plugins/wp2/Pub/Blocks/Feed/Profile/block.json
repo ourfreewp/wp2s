@@ -1,0 +1,19 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "freewp/activity-feed-profile",
+    "title": "Feed Profile",
+    "category": "blockstudio",
+    "icon": "star-filled",
+    "blockstudio": {
+        "attributes": [
+            {
+                "type": "toggle",
+                "id": "inherit",
+                "label": "Inherit Profile",
+                "default": true,
+                "fallback": true
+            }
+        ]
+    }
+ }

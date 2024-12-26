@@ -1,0 +1,9 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "onthewater/social-links",
+   "title": "Social Links",
+   "category": "blockstudio",
+   "icon": "share-alt",
+   "blockstudio": true
+}

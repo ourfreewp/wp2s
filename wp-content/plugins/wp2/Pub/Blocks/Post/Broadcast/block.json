@@ -1,0 +1,36 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/post-broadcast",
+	"title": "Post Broadcast",
+	"category": "blockstudio",
+	"icon": "layout",
+	"ancestor": [
+		"core/post-content"
+	],
+	"supports": {
+		"align": ["wide", "full", "left", "right", "center"],
+		"dimensions": {
+			"aspectRatio": true,
+			"minHeight": true
+		},
+		"customClassName": true,
+		"anchor": true,
+		"renaming": true,
+		"color": {
+			"background": true,
+			"text": true,
+			"heading": true,
+			"link": true,
+			"button": true,
+			"enableContrastChecker": true
+		},
+		"ariaLabel": true,
+		"spacing": {
+			"padding": true,
+			"margin": true
+		},
+		"multiple": false
+	},
+	"blockstudio": true
+}

@@ -1,0 +1,37 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/iubenda",
+	"title": "Iubenda",
+	"category": "blockstudio",
+	"icon": "block-default",
+	"supports": {
+		"align": [
+			"full",
+			"wide"
+		]
+	},
+	"blockstudio": {
+		"attributes": [
+			{
+				"id": "type",
+				"type": "select",
+				"allowNull": "Select an option",
+				"options": [
+					{
+						"label": "Privacy Policy",
+						"value": "privacy"
+					},
+					{
+						"label": "Cookie Policy",
+						"value": "cookies"
+					},
+					{
+						"label": "Terms and Conditions",
+						"value": "terms"
+					}
+				]
+			}
+		]
+	}
+}

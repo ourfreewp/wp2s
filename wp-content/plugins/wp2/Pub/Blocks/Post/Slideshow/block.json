@@ -1,0 +1,9 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "oddnews/post-slideshow",
+   "title": "Post Slideshow",
+   "category": "blockstudio",
+   "icon": "slides",
+   "blockstudio": true
+}

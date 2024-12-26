@@ -1,0 +1,213 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "webmultipliers/pricing-table",
+   "title": "Pricing Table",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "supports": {
+      "align": [
+         "wide",
+         "full"
+      ]
+   }, 
+   "allowedBlocks": [
+      "webmultipliers/pricing-table-column"
+   ],
+   "blockstudio": {
+      "attributes": [
+         {
+            "id": "layout",
+            "type": "select",
+            "label": "Layout",
+            "options": [
+               {
+                  "value": "1",
+                  "label": "One",
+                  "innerBlocks": [
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "value": "2",
+                  "label": "Two",
+                  "innerBlocks": [
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "value": "3",
+                  "label": "Three",
+                  "innerBlocks": [
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     }
+                  ]
+               },
+               {
+                  "value": "4",
+                  "label": "Four",
+                  "innerBlocks": [
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-column",
+                        "attributes": {
+                           "className": "col"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product",
+                              "attributes": {
+                                 "layout": {
+                                    "value": 1
+                                 }
+                              }
+                           }
+                        ]
+                     }
+                  ]
+               }
+            ],
+            "allowNull": "Select an option"
+         }
+      ]
+   }
+}

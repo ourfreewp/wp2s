@@ -1,0 +1,29 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "onthewater/search-results-summary",
+   "title": "Search Results Summary",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "supports": {
+      "align": [
+         "left",
+         "center",
+         "right"
+      ],
+      "customClassName": true,
+      "typography": {
+         "fontSize": true,
+         "lineHeight": true,
+         "textAlign": true,
+         "__experimentalFontFamily": true,
+         "__experimentalFontWeight": true,
+         "__experimentalLetterSpacing": true
+      },
+      "color": {
+         "background": true,
+         "text": true
+      }
+   },
+   "blockstudio": true
+}

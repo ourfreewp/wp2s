@@ -1,0 +1,29 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "webmultipliers/pricing-table-column",
+   "title": "Pricing Table Column",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "parent": [
+      "webmultipliers/pricing-table"
+   ],
+   "allowedBlocks": [
+      "webmultipliers/pricing-table-product"
+   ],
+   "usesContext": [
+      "webmultipliers/pricing-table"
+   ],
+   "blockstudio": {
+      "attributes": [
+         {
+            "id": "Featured",
+            "type": "toggle",
+            "default": false,
+            "fallback": false,
+            "help": "Set this product as featured",
+            "label": "Featured"
+         }
+      ]
+   }
+}

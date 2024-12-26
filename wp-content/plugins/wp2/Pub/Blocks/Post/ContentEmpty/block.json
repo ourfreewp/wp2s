@@ -1,0 +1,15 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/post-content-empty",
+	"title": "Post Content Empty",
+	"category": "blockstudio",
+	"icon": "layout",
+	"supports": {
+		"align": ["wide", "full"]
+	},
+	"parent": [
+		"onthewater/post-content"
+	],
+	"blockstudio": true
+}

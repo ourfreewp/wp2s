@@ -1,0 +1,32 @@
+
+.offer.offer--membership {
+	order: 1;
+}
+
+.offer.offer--mailing-list {
+	order: 2;
+}
+
+
+:not(.wp-context-admin) .freq-hidden {
+  display: none;
+}
+
+.freq-toggle-button:not(.active) .wp-element-button {
+	background: var(--wp--preset--color--background);
+    color: var(--wp--preset--color--text);
+}
+
+
+
+@media ( min-width: 768px ) {
+
+	.offer.offer--membership {
+		order: 2;
+	}
+
+	.offer.offer--mailing-list {
+		order: 1;
+	}
+}
+

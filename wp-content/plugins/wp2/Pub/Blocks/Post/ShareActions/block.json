@@ -1,0 +1,9 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/post-share-actions",
+	"title": "Post Share Actions",
+	"category": "blockstudio",
+	"icon": "share",
+	"blockstudio": false
+}

@@ -1,0 +1,17 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "freewp-klaviyo/form",
+   "title": "Form (Klaviyo)",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "blockstudio": {
+      "attributes": [
+         {
+            "id": "form_id",
+            "type": "text",
+            "label": "Form Id"
+         }
+      ]
+   }
+}

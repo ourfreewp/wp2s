@@ -1,0 +1,44 @@
+$enable-caret: false;
+$enable-rounded: false;
+$enable-grid-classes: false;
+$enable-container-classes: true;
+$enable-cssgrid: true;
+$enable-rfs: false;
+$enable-validation-icons: false;
+$enable-dark-mode: false;
+$prefix: wp--custom--;
+
+$spacers: (
+  "0": 0
+);
+
+$position-values: (
+  0: 0,
+  50: 50%,
+  100: 100%
+);
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px
+);
+
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+
+$zindex-levels: (
+  n1: -1,
+  0: 0,
+  1: 1,
+  2: 2,
+  3: 3
+);
+
+$breadcrumb-divider: quote("|");
+$breadcrumb-margin-bottom: 0;
+$breadcrumb-item-padding-x: 0.25rem;
+
+$breadcrumb-font-size: var(--wp--preset--font-size--small);

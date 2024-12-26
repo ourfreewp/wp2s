@@ -1,0 +1,147 @@
+body.login {
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+body.login div#login {
+	padding: unset;
+}
+
+body.login div#login h1 {}
+
+body.login div#login h1 a {
+	background-image: unset;
+	background-size: unset;
+	background-position: unset;
+	background-repeat: unset;
+	color: unset;
+	height: unset;
+	font-size: unset;
+	font-weight: unset;
+	line-height: unset;
+	margin: unset;
+	padding: unset;
+	text-decoration: unset;
+	width: unset;
+	text-indent: unset;
+	outline: unset;
+	overflow: unset;
+	display: block;
+}
+
+body.login div#login form#loginform {
+	margin-top: unset;
+	padding: var(--wp--preset--spacing--50);
+	display: flex;
+	flex-direction: column;
+	border: unset;
+	box-shadow: unset;
+	gap: var(--wp--preset--spacing--40);
+}
+
+body.login div#login form#loginform .cf-turnstile {
+	display: flex;
+	margin-left: unset;
+
+}
+
+body.login div#login form#loginform .cf-turnstile-br {
+	display: none;
+}
+
+body.login div#login form#loginform .cf-turnstile iframe {
+	width: 100% !important;
+}
+
+body.login div#login form#loginform #nsl-custom-login-form-main {
+    padding-top: var(--wp--preset--spacing--40);
+    border-top: 1px solid var(--wp--preset--color--primary-accent);
+}
+
+body.login div#login form#loginform .nsl-container {
+	padding: 0;
+	display: flex !important;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+body.login div#login form#loginform .nsl-container-buttons {
+	padding: unset;
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+}
+
+body.login div#login form#loginform .nsl-container-buttons a {
+	margin: unset;
+}
+
+body.login div#login form#loginform p {}
+
+body.login div#login form#loginform p label {
+	margin-bottom: unset;
+	line-height: 1.1;
+}
+
+body.login div#login form#loginform input {
+	font-size: unset;
+	line-height: unset;
+	border-width: unset;
+	padding: unset;
+	margin: unset;
+	border: 2px solid var(--wp--preset--color--primary-accent);
+	box-shadow: unset;
+	color: var(--wp--preset--color--main);
+	border-radius: unset;
+}
+
+body.login div#login form#loginform input#user_login {}
+
+body.login div#login form#loginform input#user_pass {}
+
+body.login div#login form#loginform p.forgetmenot {
+	float: unset;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 7px;
+	line-height: 1;
+}
+
+body.login div#login form#loginform p.forgetmenot input#rememberme {}
+
+body.login div#login form#loginform p.submit {
+	width: 100%;
+	padding: unset;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+	width: 100%;
+	color: var(--wp--preset--color--base);
+	font-weight: var(--wp--custom--font-weight--semi-bold);
+	border: unset;
+}
+
+body.login div#login p#nav {
+	font-size: unset;
+	padding: unset;
+	margin: unset;
+}
+
+body.login div#login p#nav a {}
+
+body.login div#login p#backtoblog {
+	font-size: unset;
+	padding: unset;
+	margin: unset;
+}
+
+body.login div#login p#backtoblog a {}
+
+
+body.login h1.wp-block-site-title a {
+	all: unset;
+}

@@ -1,0 +1,18 @@
+.color-split-secondary-to-light {
+
+	background-image: linear-gradient(to bottom, var(--wp--preset--color--secondary) 0, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--light) 50%, var(--wp--preset--color--light) 100%);
+
+	@include media-breakpoint-up(lg) {
+		background-image: linear-gradient(to right, var(--wp--preset--color--secondary) 0, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--light) 50%, var(--wp--preset--color--light) 100%);
+	}
+}
+
+
+.color-split-light-to-secondary {
+
+	background-image: linear-gradient(to bottom, var(--wp--preset--color--light) 0, var(--wp--preset--color--light) 50%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--secondary) 100%);
+
+	@include media-breakpoint-up(lg) {
+		background-image: linear-gradient(to right, var(--wp--preset--color--light) 0, var(--wp--preset--color--light) 50%, var(--wp--preset--color--secondary) 50%, var(--wp--preset--color--secondary) 100%);
+	}
+}

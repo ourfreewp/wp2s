@@ -1,0 +1,1 @@
+<?php // Styles initialization

@@ -1,0 +1,22 @@
+.site-navbar-secondary {
+	position: relative;
+	z-index: 2;
+	overflow-y: hidden;
+
+	>.wp-block-navigation {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		text-align: center;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+
+		>.wp-block-buttons:first-child {
+			> .wp-block-button:first-child a {
+				@include media-breakpoint-up(md) {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+}

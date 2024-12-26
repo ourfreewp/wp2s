@@ -1,0 +1,21 @@
+.wp-block-post-content {
+	
+	// when the item is not alignleft or alignright
+	> :where() {
+		
+		& body.single-post & {
+			&.wp-video,
+			&.has-text-align-right,
+			&.has-text-align-center,
+			&.wp-block-pullquote,
+			&.wp-block-quote,
+			&.wp-block-embed,
+			&.wp-block-image {
+				width: 100%;
+				max-width: 100%;
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+}

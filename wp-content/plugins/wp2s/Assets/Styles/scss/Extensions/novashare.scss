@@ -1,0 +1,9 @@
+.ns-buttons-wrapper {
+	.ns-button:only-child{
+		margin: 0;
+	}
+}
+
+.ns-inline-cta:empty {
+	display: none;
+}

@@ -1,0 +1,10 @@
+input {
+	width: 100%;
+    font-family: var(--wp--preset--font-family--lato);
+    font-size: var(--wp--preset--font-size--sm);
+    padding: calc(0.667em + 2px) calc(1.333em + 2px);
+	border-color: var(--wp--preset--color--separator);
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 9999px;
+}

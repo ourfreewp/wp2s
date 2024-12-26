@@ -1,0 +1,12 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "freewp/activity-feed-no-results",
+    "title": "Activity Feed No Results",
+    "category": "blockstudio",
+    "ancestor": [
+        "core/query"
+    ],
+    "icon": "star-filled",
+    "blockstudio": true
+ }

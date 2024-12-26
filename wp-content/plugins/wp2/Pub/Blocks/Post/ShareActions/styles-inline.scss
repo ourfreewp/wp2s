@@ -1,0 +1,22 @@
+.wp-block-onthewater-post-share-actions {
+	.ns-buttons {
+		width: 100%;
+		margin-top: 0;
+
+		.ns-button-icon>* {
+			margin: 0 !important;
+		}
+
+		a.ns-button {
+			margin: 0 !important;
+		}
+
+		.ns-button:not(.share) {
+			display: none;
+		}
+	}
+
+	.ns-inline-cta {
+		display: none;
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "name": "oddnews/micromodal",
+  "title": "Modal",
+  "category": "text",
+  "icon": "star-filled",
+  "description": "A modal using the micromodal library.",
+  "blockstudio": true
+}

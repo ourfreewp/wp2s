@@ -1,0 +1,17 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "freewp-coda/form-embed",
+   "title": "Coda Form",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "blockstudio": {
+      "attributes": [
+         {
+            "id": "iframe_src",
+            "type": "text",
+            "label": "Url"
+         }
+      ]
+   }
+}

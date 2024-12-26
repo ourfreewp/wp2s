@@ -1,0 +1,10 @@
+{
+    "packs": [
+        {
+            "name": "bettermode",
+            "directory": "packs/bettermode",
+            "description": "A pack for integrating with the Bettermode API",
+            "packId": "35711"
+        }
+    ]
+}

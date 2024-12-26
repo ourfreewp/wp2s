@@ -1,0 +1,69 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "instawp/template-items",
+   "title": "Template Items",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "supports": {
+	"align": ["wide", "full"],
+	"spacing": {
+		"margin": true,
+		"padding": true
+	}
+   },
+   "blockstudio": {
+      "attributes": [
+         {
+            "label": "Item",
+            "id": "item",
+            "type": "select",
+            "options": [
+               {
+                  "label": "Pages",
+                  "value": "pages"
+               },
+               {
+                  "label": "Plugins",
+                  "value": "plugins"
+               },
+               {
+                  "label": "Block Types",
+                  "value": "block-types"
+               },
+               {
+                  "label": "Themes",
+                  "value": "themes"
+               },
+               {
+                  "label": "Post Types",
+                  "value": "post-types"
+               },
+               {
+                  "label": "Taxonomies",
+                  "value": "taxonomies"
+               },
+               {
+                  "label": "Uploads",
+                  "value": "uploads"
+               },
+               {
+                  "label": "PHP Extensions",
+                  "value": "php-extensions"
+               },
+               {
+                  "label": "Shortcodes",
+                  "value": "shortcodes"
+               },
+               {
+                  "label": "Block Visibility Presets",
+                  "value": "block-visibility-presets"
+               }
+            ],
+            "allowNull": "Select an item",
+            "help": "Select an item to display",
+            "stylisedUi": true
+         }
+      ]
+   }
+}

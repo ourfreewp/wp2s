@@ -1,0 +1,26 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "onthewater/archive-excerpt",
+   "title": "Archive Excerpt",
+   "category": "blockstudio",
+   "icon": "heading",
+   "supports": {
+      "align": [
+         "left",
+         "center",
+         "right",
+         "full",
+         "wide"
+      ],
+      "typography": {
+         "fontSize": true,
+         "lineHeight": true,
+         "textAlign": true,
+         "__experimentalFontFamily": true,
+         "__experimentalFontWeight": true,
+         "__experimentalLetterSpacing": true
+      }
+   },
+   "blockstudio": true
+}

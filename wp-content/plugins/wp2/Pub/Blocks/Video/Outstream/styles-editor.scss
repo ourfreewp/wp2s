@@ -1,0 +1,14 @@
+.placeholder.placeholder-outstream {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background-color: #f3f3f3;
+    border: 1px solid #ddd;
+
+    p {
+        margin: 0;
+        font-size: small;
+    }
+}

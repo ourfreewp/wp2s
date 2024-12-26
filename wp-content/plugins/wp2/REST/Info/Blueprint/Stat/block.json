@@ -1,0 +1,30 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "instawp/template-items-count",
+   "title": "Template Items Count",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "ancestor": [
+	"core/query"
+   ],
+   "supports": {
+	"align": ["wide", "full"],
+	"spacing": {
+		"margin": true,
+		"padding": true
+	}
+   },
+  "blockstudio": {
+    "attributes": [
+      {
+        "id": "prefix",
+        "type": "richtext"
+      },
+	  {
+		"id": "suffix",
+		"type": "richtext"
+	  }
+    ]
+  }
+}

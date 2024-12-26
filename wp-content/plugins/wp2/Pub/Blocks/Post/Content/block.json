@@ -1,0 +1,12 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/post-content",
+	"title": "Post Content Group",
+	"category": "blockstudio",
+	"icon": "layout",
+	"supports": {
+		"align": ["wide", "full"]
+	},
+	"blockstudio": true
+}

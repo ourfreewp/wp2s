@@ -1,0 +1,42 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2-community/embed-community",
+    "title": "Community",
+    "category": "blockstudio",
+    "icon": "star-filled",
+    "blockstudio": {
+        "attributes": [
+            {
+                "type": "text",
+                "label": "Community",
+                "id": "communityUrl",
+                "placeholder": "https://spaces.freewp.com"
+            },
+            {
+                "type": "select",
+                "label": "Layout",
+                "id": "layout",
+                "options": [
+                    {
+                        "label": "Default",
+                        "value": "default"
+                    },
+                    {
+                        "label": "No Sidebar",
+                        "value": "no-sidebar"
+                    },
+                    {
+                        "label": "Basic",
+                        "value": "basic"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "label": "Title",
+                "id": "title"
+            }
+        ]
+    }
+ }

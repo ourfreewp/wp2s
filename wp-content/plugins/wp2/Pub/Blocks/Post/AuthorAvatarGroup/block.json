@@ -1,0 +1,74 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "onthewater/post-author-avatars",
+   "title": "Co-Author Avatars",
+   "category": "blockstudio",
+   "icon": "id",
+   "blockstudio": {
+      "attributes": [
+         {
+            "id": "avatarDefault",
+            "label": "Default",
+            "type": "select",
+            "options": [
+               {
+                  "label": "404",
+                  "value": "404"
+               },
+               {
+                  "label": "Retro",
+                  "value": "retro"
+               },
+               {
+                  "label": "Robohash",
+                  "value": "robohash"
+               },
+               {
+                  "label": "Monsterid",
+                  "value": "monsterid"
+               },
+               {
+                  "label": "Wavatar",
+                  "value": "wavatar"
+               },
+               {
+                  "label": "Identicon",
+                  "value": "identicon"
+               },
+               {
+                  "label": "Mystery",
+                  "value": "mystery"
+               },
+               {
+                  "label": "Blank",
+                  "value": "blank"
+               },
+               {
+                  "label": "Gravatar Default",
+                  "value": "gravatar_default"
+               }
+            ]
+         },
+         {
+            "id": "avatarSize",
+            "label": "Size",
+            "type": "select",
+            "options": [
+               {
+                  "label": "Default — 96",
+                  "value": "96"
+               },
+               {
+                  "label": "48",
+                  "value": "48"
+               },
+               {
+                  "label": "36",
+                  "value": "36"
+               }
+            ]
+         }
+      ]
+   }
+}

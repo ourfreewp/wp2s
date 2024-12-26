@@ -1,0 +1,36 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"apiVersion": 2,
+	"name": "onthewater/post-template-item",
+	"title": "Post Template Item",
+	"category": "blockstudio",
+	"icon": "layout",
+	"parent": [
+		"core/post-template"
+	],
+	"usesContext": [
+		"core/post-template"
+	],
+	"blockstudio": {
+		"attributes": [
+			{
+				"type": "message",
+				"value": "This block is used to display the post template that is used in a post query"
+			},
+			{
+				"label": "Template",
+				"type": "select",
+				"id": "template",
+				"allowNull": "Select template",
+				"fallback": "default",
+				"default": "default",
+				"options": [
+					{
+						"label": "Default",
+						"value": "default"
+					}
+				]
+			}
+		]
+	}
+}

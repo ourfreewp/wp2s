@@ -1,0 +1,28 @@
+{
+  "$schema": "https://app.blockstudio.dev/schema",
+  "apiVersion": 2,
+  "name": "instawp/template-items-summary",
+  "title": "Template Items Summary",
+  "category": "blockstudio",
+  "icon": "star-filled",
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "blockstudio": {
+    "attributes": [
+      {
+        "label": "Item",
+        "id": "item",
+        "type": "text",
+        "help": "Select an item to display"
+      }
+    ]
+  }
+}

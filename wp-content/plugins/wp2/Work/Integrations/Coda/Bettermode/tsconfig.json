@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "target": "ES2019",
+      "module": "commonjs",
+      "lib": ["dom", "es2019"],
+      "declaration": true,
+      "outDir": "./dist",
+      "rootDir": "./packs",  // Adjusted to fit the monorepo structure
+      "skipLibCheck": true,
+      "strict": true,
+      "noImplicitAny": true
+    },
+    "include": [
+      "packs/*/src/**/*"  // Includes only source files within each pack
+    ],
+    "exclude": [
+      "node_modules",  // Exclude node_modules to avoid issues
+      "dist"  // Exclude the output directory
+    ]
+  }

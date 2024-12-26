@@ -1,0 +1,69 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "onthewater/archive-title",
+   "title": "Archive Title",
+   "category": "blockstudio",
+   "icon": "heading",
+   "supports": {
+      "align": ["full","wide","center","left","right"],
+      "typography": {
+         "fontSize": true,
+         "lineHeight": true,
+         "textAlign": true,
+         "__experimentalFontFamily": true,
+         "__experimentalFontWeight": true,
+         "__experimentalLetterSpacing": true
+      }
+   },
+   "blockstudio": {
+      "attributes": [
+         {
+            "id": "prefix",
+            "type": "richtext"
+         },
+         {
+            "id": "suffix",
+            "type": "richtext"
+         },
+         {
+            "id": "tag",
+            "type": "select",
+            "options": [
+               {
+                  "label": "H1",
+                  "value": "h1"
+               },
+               {
+                  "label": "H2",
+                  "value": "h2"
+               },
+               {
+                  "label": "H3",
+                  "value": "h3"
+               },
+               {
+                  "label": "H4",
+                  "value": "h4"
+               },
+               {
+                  "label": "H5",
+                  "value": "h5"
+               },
+               {
+                  "label": "H6",
+                  "value": "h6"
+               },
+               {
+                  "label": "Div",
+                  "value": "Div"
+               },
+               {
+                  "label": "P",
+                  "value": "p"
+               }
+            ]
+         }
+      ]
+   }
+}

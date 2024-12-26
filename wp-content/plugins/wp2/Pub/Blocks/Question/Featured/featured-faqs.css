@@ -1,0 +1,32 @@
+
+.faqs {
+
+}
+
+.faq-items {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	gap: var(--wp--preset--spacing--70);
+}
+
+.faq-item {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--20);
+}
+
+.faq-item .faq-heading {
+	font-size: var(--wp--preset--font-size--medium);
+	font-weight: var(--wp--custom--font-weight--semi-bold);
+	margin: 0;
+}
+
+.faq-item .faq-excerpt {
+	margin: 0;
+}
+
+@media ( min-width: 768px ) {
+	.faq-items {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

@@ -1,0 +1,9 @@
+{
+  "$schema": "https://app.blockstudio.dev/schema",
+  "name": "onthewater/featured-section",
+  "title": "Featured Section",
+  "category": "text",
+  "icon": "star-filled",
+  "description": "",
+  "blockstudio": true
+}

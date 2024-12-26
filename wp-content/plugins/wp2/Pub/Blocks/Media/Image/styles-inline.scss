@@ -1,0 +1,11 @@
+.wp-block-oddnews-image {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+
+	> img {
+		width: 100%;
+		height: auto;
+	}
+}

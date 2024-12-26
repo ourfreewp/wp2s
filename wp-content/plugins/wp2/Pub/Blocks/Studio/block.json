@@ -1,0 +1,13 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "apiVersion": 2,
+    "name": "wp2-studio/studio",
+    "title": "Studio",
+    "category": "blockstudio",
+    "icon": "star-filled",
+    "supports": {
+        "className": false,
+        "customClassName": true
+    },
+    "blockstudio": true
+}

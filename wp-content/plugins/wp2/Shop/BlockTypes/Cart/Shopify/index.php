@@ -1,0 +1,1 @@
+<div class="shopwp-cart-trigger"></div>

@@ -1,0 +1,13 @@
+.faq-collection {
+	display: flex;
+	flex-direction: column;
+	gap: var(--wp--preset--spacing--large);
+
+}
+
+.faq-collections.alignwide .faq-collection {
+	padding-top: var(--wp--preset--spacing--xx-large);
+	padding-right: var(--wp--preset--spacing--medium);
+	padding-bottom: var(--wp--preset--spacing--xx-large);
+	padding-left: var(--wp--preset--spacing--medium);
+}

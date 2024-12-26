@@ -1,0 +1,119 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "oddnews/image",
+   "title": "Image",
+   "category": "media",
+   "icon": "format-image",
+   "supports": {
+      "align": [
+         "left",
+         "center",
+         "right"
+      ],
+      "anchor": true,
+      "color": {
+         "background": true,
+         "text": true
+      },
+      "renaming": true,
+      "spacing": {
+         "margin": true,
+         "padding": true
+      },
+      "shadow": true
+   },
+   "blockstudio": {
+      "attributes": [
+         {
+            "type": "tabs",
+            "tabs": [
+               {
+                  "type": "tab",
+                  "title": "Image",
+                  "attributes": [
+                     {
+                        "id": "instructions",
+                        "label": "Instructions",
+                        "type": "message",
+                        "value": "Upload an image to display it in your post."
+                     },
+                     {
+                        "id": "image",
+                        "type": "files",
+                        "multiple": false
+                     },
+                     {
+                        "id": "caption",
+                        "label": "Caption",
+                        "type": "textarea",
+                        "placeholder": "Overwrite the default caption for the image.",
+                        "help": "Enter a caption for the image"
+                     },
+                     {
+                        "id": "byline",
+                        "label": "Byline",
+                        "type": "text",
+                        "placeholder": "Overwrite the default byline for the image.",
+                        "help": "Enter a byline for the image"
+                     }
+                  ]
+               },
+               {
+                  "type": "tab",
+                  "title": "Details",
+                  "attributes": [
+                     {
+                        "id": "alt",
+                        "label": "Alt Text",
+                        "type": "textarea",
+                        "placeholder": "Overwrite the default alt text for the image.",
+                        "help": "Describe the purpose of the image"
+                     },
+                     {
+                        "id": "title",
+                        "label": "Title",
+                        "type": "text",
+                        "placeholder": "Overwrite the default title for the image.",
+                        "help": "Enter a title for the image"
+                     }
+                  ]
+               },
+               {
+                  "title": "Dimensions",
+                  "attributes": [
+                     {
+                        "id": "size",
+                        "label": "Size",
+                        "type": "select",
+                        "populate": {
+                           "type": "function",
+                           "function": "get_intermediate_image_sizes"
+                        },
+                        "default": "large",
+                        "fallback": "large",
+                        "help": "Select the image size to display."
+                     },
+                     {
+                        "id": "max-width",
+                        "label": "Max Width",
+                        "type": "text",
+                        "placeholder": "200px",
+                        "default": "auto",
+                        "fallback": "auto"
+                     },
+                     {
+                        "id": "max-height",
+                        "label": "Max Height",
+                        "type": "text",
+                        "placeholder": "auto",
+                        "default": "auto",
+                        "fallback": "auto"
+                     }
+                  ]
+               }
+            ]
+         }
+      ]
+   }
+}

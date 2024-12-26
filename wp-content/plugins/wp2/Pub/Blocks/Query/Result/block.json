@@ -1,0 +1,26 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "oddnews/search-results-summary",
+   "title": "Search Results Summary",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "supports": {
+      "align": [
+         "left",
+         "center",
+         "right"
+      ],
+      "customClassName": true,
+      "typography": {
+         "fontSize": true,
+         "lineHeight": true,
+			"textAlign": true
+      },
+      "color": {
+         "background": true,
+         "text": true
+      }
+   },
+   "blockstudio": true
+}

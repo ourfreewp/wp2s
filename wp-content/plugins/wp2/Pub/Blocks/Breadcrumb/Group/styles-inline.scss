@@ -1,0 +1,21 @@
+.wp-block-onthewater-breadcrumbs {
+	.breadcrumb {
+		text-transform: uppercase;
+
+		.breadcrumb-item {
+			&.visually-hidden {
+				+.breadcrumb-item {
+					padding-left: 0;
+
+					&::before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		[aria-current="page"] {
+			display: none;
+		}
+	}
+}

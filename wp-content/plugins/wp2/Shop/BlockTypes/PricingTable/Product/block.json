@@ -1,0 +1,75 @@
+{
+   "$schema": "https://app.blockstudio.dev/schema",
+   "apiVersion": 2,
+   "name": "webmultipliers/pricing-table-product",
+   "title": "Pricing Table Product",
+   "category": "blockstudio",
+   "icon": "star-filled",
+   "providesContext": {
+      "merchandiseId": "merchandiseId"
+   },
+   "blockstudio": {
+      "attributes": [
+         {
+            "label": "Product",
+            "id": "product",
+            "type": "select",
+            "populate": {
+               "type": "query",
+               "query": "posts",
+               "arguments": {
+                  "post_type": "product",
+                  "posts_per_page": -1
+               }
+            },
+            "allowNull": "Select a product"
+         },
+         {
+            "id": "layout",
+            "type": "select",
+            "label": "Layout",
+            "options": [
+               {
+                  "value": "1",
+                  "label": "One",
+                  "innerBlocks": [
+                     {
+                        "name": "webmultipliers/pricing-table-product-badge"
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-product-image"
+                     },
+                     {
+                        "name": "core/group",
+                        "attributes": {
+                           "className": "card-body"
+                        },
+                        "innerBlocks": [
+                           {
+                              "name": "webmultipliers/pricing-table-product-name"
+                           },
+                           {
+                              "name": "webmultipliers/pricing-table-product-description"
+                           },
+                           {
+                              "name": "webmultipliers/pricing-table-product-pricing"
+                           },
+                           {
+                              "name": "webmultipliers/pricing-table-product-actions"
+                           }
+                        ]
+                     },
+                     {
+                        "name": "webmultipliers/pricing-table-product-features"
+                     }
+                  ]
+               }
+            ],
+            "allowNull": "Select an option"
+         }
+      ],
+      "refreshOn": [
+         "save"
+      ]
+   }
+}

@@ -16,19 +16,53 @@ define('WP2_URL', plugin_dir_url(__FILE__));
 define('WP2_VERSION', '1.0.0');
 define('WP2_NAMESPACE', 'wp2');
 
-spl_autoload_register(function ($class) {
-    $base_namespace = 'WP2\\';
+// Autoloader
+require_once WP2_PATH . 'vendor/autoload.php';
 
-    if (strpos($class, $base_namespace) === 0) {
-        $relative_class = substr($class, strlen($base_namespace));
-        $file = WP2_PATH . str_replace('\\', '/', $relative_class) . '.php';
+class WP2
+{
+    protected array $controllers = [
+        'Bio\Controller',
+        'Blog\Controller',
+        'Community\Controller',
+        'Contact\Controller',
+        'Dev\Controller',
+        'Health\Controller',
+        'Legal\Controller',
+        'Link\Controller',
+        'Marketing\Controller',
+        'Media\Controller',
+        'One\Controller',
+        'Pro\Controller',
+        'Pub\Controller',
+        'REST\Controller',
+        'Run\Controller',
+        'Sh\Controller',
+        'Shop\Controller',
+        'Singles\Controller',
+        'Studio\Controller',
+        'Style\Controller',
+        'Wiki\Controller',
+        'Work\Controller',
+        'Zone\Controller',
+    ];
 
-        if (file_exists($file)) {
-            require_once $file;
+    public function __construct()
+    {
+        $this->initialize_controllers();
+    }
+
+    protected function initialize_controllers(): void
+    {
+        foreach ($this->controllers as $controller) {
+            $class = __NAMESPACE__ . '\\' . $controller;
+            if (class_exists($class)) {
+                new $class();
+            } else {
+                error_log("Controller not found: $class");
+            }
         }
     }
-});
-// Initialize Core Controllers
-new Studio\Controller();
-new Singles\Controller();
-new Zone\Controller();
+}
+
+new WP2();

@@ -80,8 +80,8 @@ class Controller
             'labels'              => $labels,
             'public'              => true,
             'hierarchical'        => true,
-            'exclude_from_search' => false,
-            'publicly_queryable'  => true,
+            'exclude_from_search' => true,
+            'publicly_queryable'  => false,
             'show_ui'             => true,
             'show_in_nav_menus'   => false,
             'show_in_admin_bar'   => false,
@@ -92,7 +92,7 @@ class Controller
             'query_var'           => true,
             'can_export'          => true,
             'delete_with_user'    => false,
-            'has_archive'         => $table['archive'],
+            'has_archive'         => false,
             'rewrite'             => [
                 'slug'       => strtolower($table['single']),
                 'with_front' => false,
@@ -101,7 +101,6 @@ class Controller
             'capability_type'     => 'post',
             'supports'            => [
                 'title',
-                'editor',
                 'thumbnail',
                 'excerpt',
                 'author',

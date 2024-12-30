@@ -1,1 +1,9 @@
 @import "scss/responsive-controls.scss";
+
+
+
+:not(.has-child-selected, .is-selected) {
+  &.block-visibility__has-visibility {
+    display: none;
+  }
+}

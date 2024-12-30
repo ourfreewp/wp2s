@@ -1,0 +1,11 @@
+{
+    "name": "wp2s/wp2",
+    "description": "The WP2 plugin.",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "WP2\\": "src/"
+        }
+    },
+    "require": {}
+}

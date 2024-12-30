@@ -1,26 +1,36 @@
 <?php
+/**
+ * Plugin Name: Extend — ShopWP
+ * Description: A utility plugin for extending ShopWP plugin.
+ * Version: 1.0
+ * Author: Vinny S. Green
+ **/
 
-add_filter('shopwp_use_products_all_template', function ($use_plugin_template) {
-    return false;
-});
 
-add_filter('shopwp_use_products_single_template', function ($use_plugin_template) {
-    return false;
-});
+// Prevent direct access
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-add_filter('shopwp_use_collections_all_template', function ($use_plugin_template) {
-    return false;
-});
+define('EXT_SHOPWP_NAMESPACE', 'ext_shopwp');
+define('EXT_SHOPWP_PREFIX', 'ext_shopwp_');
+define('EXT_SHOPWP', 'extend-shopwp');
 
-add_filter('shopwp_use_collections_single_template', function ($use_plugin_template) {
-    return false;
-});
+define('EXT_SHOPWP_PATH', plugin_dir_path(__FILE__));
+define('EXT_SHOPWP_URL', plugin_dir_url(__FILE__));
 
-add_filter('shopwp_register_products_args', function ($args) {
-    $args['exclude_from_search'] = true;
-    return $args;
-});
 
-add_filter('shopwp_show_breadcrumbs', function ($show_breadcrumbs) {
-    return false;
+add_action('init', function () {
+
+    if (defined("BLOCKSTUDIO")) {
+        $directories = [
+            'src',
+        ];
+
+        foreach ($directories as $dir) {
+            Blockstudio\Build::init([
+                'dir' => EXT_SHOPWP_PATH . $dir,
+            ]);
+        }
+    }
 });

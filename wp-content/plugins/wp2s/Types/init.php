@@ -116,21 +116,21 @@ class Controller
 
     public function register_meta_boxes($meta_boxes)
     {
-
-        $fields = $this->get_fields();
-
+        // Grab the list of custom post types from your defined_types() method
         $defined_types = $this->defined_types();
 
-        $post_types = array_map(function ($type) {
-            return $this->prefix . strtolower($type['single']);
-        }, $defined_types);
+        // For each custom post type, define its meta box
+        foreach ($defined_types as $type_data) {
+            // Build the actual post type slug, e.g. "wp2s_zone"
+            $post_type_slug = $this->prefix . strtolower($type_data['single']);
 
-        $meta_boxes[] = [
-            'title'      => __('WP2S', $this->textdomain),
-            'id'         => $this->prefix . 'fields',
-            'post_types' => $post_types,
-            'fields'     => $fields,
-        ];
+            $meta_boxes[] = [
+                'title'      => sprintf(__('WP2S: %s Fields', $this->textdomain), $type_data['singular']),
+                'id'         => $this->prefix . 'fields_' . $post_type_slug,
+                'post_types' => [$post_type_slug],
+                'fields'     => $this->build_fields_for($post_type_slug),
+            ];
+        }
 
         return $meta_boxes;
     }
@@ -231,33 +231,78 @@ class Controller
         return !empty($sites) ? $sites[0] : false;
     }
 
-    private function get_fields()
+    private function build_fields_for($post_type)
     {
+
         $fields_data = [
-            'id' => 'Id',
-            'identifier' => 'Identifier',
-            'name' => 'Name',
+            'id'          => 'Id',
+            'identifier'  => 'Identifier',
+            'name'        => 'Name',
             'description' => 'Description',
-            'url' => 'URL',
-            'home' => 'Home',
-            'doc' => 'Doc',
-            'space' => 'Space',
-            'zone' => 'Zone',
-            'wiki' => 'Wiki',
-            'domain' => 'Domain',
-            'folder' => 'Folder',
-            'collection' => 'Collection',
-            'topic' => 'Topic',
-            'brand' => 'Brand',
-            'category' => 'Category',
-            'status' => 'Status',
-            'area' => 'Area',
-            'network' => 'Network',
-            'provider' => 'Provider',
-            'type' => 'Type',
+            'url'         => 'URL',
+            'home'        => 'Home',
+            'doc'         => 'Doc',
+            'space'       => 'Space',
+            'zone'        => 'Zone',
+            'wiki'        => 'Wiki',
+            'domain'      => 'Domain',
+            'folder'      => 'Folder',
+            'collection'  => 'Collection',
+            'topic'       => 'Topic',
+            'brand'       => 'Brand',
+            'category'    => 'Category',
+            'status'      => 'Status',
+            'area'        => 'Area',
+            'network'     => 'Network',
+            'provider'    => 'Provider',
+            'type'        => 'Type',
             'is_featured' => 'Featured',
         ];
 
+        $extra_fields_map = [
+            'wp2s_plugin'  => [
+                'wp_plugin_id' => 'WP Id',
+                'wp_plugin_name' => 'WP Name',
+                'wp_plugin_author' => 'WP Author',
+                'wp_plugin_description' => 'WP Description',
+                'wp_plugin_textdomain' => 'WP Textdomain',
+                'wp_plugin_version' => 'WP Version',
+                'wp_plugin_url' => 'WP URL',
+                'wp_plugin_home_url' => 'WP Home URL',
+                'wp2_type' => 'Type',
+                'wp2_name' => 'Name',
+                'wp2_description' => 'Description',
+                'wp2_text_domain' => 'Text Domain',
+                'wp2_version' => 'Version',
+                'wp2_author' => 'Author',
+                'wp2_license' => 'License',
+                'wp2_network' => 'Network',
+                'wp2_requires_at_least' => 'Requires At Least',
+                'wp2_tested_up_to' => 'Tested Up To',
+                'wp2_requires_php' => 'Requires PHP',
+                'wp2_requires_plugins' => 'Requires Plugins',
+                'wp2_author_uri' => 'Author URI',
+                'wp2_download_uri' => 'Download URI',
+                'wp2_license_uri' => 'License URI',
+                'wp2_update_uri' => 'Update URI',
+                'wp2_home_uri' => 'Home URI',
+                'wp2_cover_photo_uri' => 'Cover Photo',
+                'wp2_profile_photo_uri' => 'WP Profile Photo',
+                'wp2_thumbnail_uri' => 'Thumbnail',
+                'wp2_banner_uri' => 'Banner',
+                'wp2_logo_uri' => 'Logo',
+                'wp2_icon_uri' => 'Icon',
+                'wp2_screenshot_uri' => 'Screenshot',
+                'wp2_screenshots' => 'Screenshots',
+            ],
+        ];
+
+        // If the current post type has extra fields, merge them
+        if (isset($extra_fields_map[$post_type])) {
+            $fields_data = array_merge($fields_data, $extra_fields_map[$post_type]);
+        }
+
+        // Common attributes
         $common_attributes = [
             'type'              => 'text',
             'required'          => false,
@@ -270,16 +315,17 @@ class Controller
         ];
 
         return array_map(function ($key, $label) use ($common_attributes) {
-            $field = array_merge([
-                'name' => __($label, $this->textdomain),
-                'id'   => $this->prefix . $key,
-            ], $common_attributes);
+            $field = array_merge(
+                [
+                    'name' => __($label, $this->textdomain),
+                    'id'   => $this->prefix . $key,
+                ],
+                $common_attributes
+            );
 
             if ($key === 'description') {
                 $field['type'] = 'textarea';
-            }
-
-            if ($key === 'is_featured') {
+            } elseif ($key === 'is_featured') {
                 $field['type'] = 'checkbox';
             }
 

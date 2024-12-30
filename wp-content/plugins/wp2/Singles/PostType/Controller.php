@@ -1,19 +1,19 @@
 <?php
-// Path: wp-content/plugins/blockstudio-blocks/blocks/registrar/init-post-types.php
+// Path: wp-content/plugins/wp2/Singles/PostType/Controller.php
 /**
  * Core classes for registering and initializing custom post types.
  *
- * @package FreeWP\Core
+ * @package WP2\Singles\PostType
  */
 
-namespace FreeWP\Core;
+namespace WP2\Singles\PostType;
 
 /**
  * Abstract Class PostType
  *
  * Provides a base class for registering custom post types.
  */
-abstract class PostType
+abstract class Controller
 {
 
     /**
@@ -24,7 +24,7 @@ abstract class PostType
         $post_type = $this->get_post_type(); // Retrieve post type slug.
         $args      = $this->get_args();      // Retrieve post type arguments.
 
-        if ( ! post_type_exists( $post_type ) ) {
+        if (! post_type_exists($post_type)) {
             register_post_type($post_type, $args); // Register the post type with WordPress.
         }
     }

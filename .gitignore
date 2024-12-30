@@ -3,3 +3,4 @@ wp-config.php
 wp-includes/
 node_modules/
 .vscode/sftp.json
+_dist/

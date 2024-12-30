@@ -9,40 +9,26 @@
 
 namespace WP2;
 
-// Exit if accessed directly.
 defined('ABSPATH') or exit;
 
-// define plugin path, url, and version
 define('WP2_PATH', plugin_dir_path(__FILE__));
 define('WP2_URL', plugin_dir_url(__FILE__));
 define('WP2_VERSION', '1.0.0');
+define('WP2_NAMESPACE', 'wp2');
 
-add_action('init', function () {
+spl_autoload_register(function ($class) {
+    $base_namespace = 'WP2\\';
 
-    if (defined("BLOCKSTUDIO")) {
-        $directories = [
-            'Bio',
-            'Blog',
-            'Community',
-            'Dev',
-            'Health',
-            'Media',
-            'One',
-            'Pro',
-            'Public',
-            'REST',
-            'Run',
-            'Sh',
-            'Singles',
-            'Studio',
-            'Style',
-            'Work',
-        ];
+    if (strpos($class, $base_namespace) === 0) {
+        $relative_class = substr($class, strlen($base_namespace));
+        $file = WP2_PATH . str_replace('\\', '/', $relative_class) . '.php';
 
-        foreach ($directories as $dir) {
-            \Blockstudio\Build::init([
-                'dir' => WP2_PATH . $dir,
-            ]);
+        if (file_exists($file)) {
+            require_once $file;
         }
     }
 });
+// Initialize Core Controllers
+new Studio\Controller();
+new Singles\Controller();
+new Zone\Controller();

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/page-data",
+    "title": "Page Data",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "lock": true
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        },
+        "layout": {
+            "type": "string",
+            "default": "constrained"
+        }
+    },
+    "blockstudio": true
+}

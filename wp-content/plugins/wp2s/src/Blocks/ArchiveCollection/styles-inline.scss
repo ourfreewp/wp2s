@@ -1,0 +1,61 @@
+.wp2s-archives {
+
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    grid-gap: 20px;
+
+
+}
+
+.wp2s-archive {
+    border: var(--wp--custom--border--width) var(--wp--custom--border--style) var(--wp--preset--color--separator);
+}
+
+.wp2s-archive__header {
+
+}
+
+.wp2s-archive__content {
+    padding: var(--wp--preset--spacing--50);
+}
+
+.wp2s-archive__thumbnail {
+
+}
+
+.wp2s-archive__name {
+
+}
+
+.wp2s-archive__description {
+
+}
+
+.wp2s-archive__meta {
+
+}
+
+.wp2s-archive__meta-item {
+
+}
+
+.wp2s-archive__meta-label {
+
+}
+
+.wp2s-archive__meta-value {
+
+}
+
+
+.wp2s-archive__footer {
+
+}
+
+.wp2s-archive__link {
+
+}

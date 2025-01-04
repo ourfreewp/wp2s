@@ -42,7 +42,6 @@
 
 // include scheduled actions
 
-require_once(ABSPATH . 'wp-content/plugins/action-scheduler/action-scheduler.php');
 
 function vsg_shopify_subscriptions_init()
 {

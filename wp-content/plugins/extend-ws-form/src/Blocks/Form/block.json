@@ -1,0 +1,48 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2-ws-form/form",
+    "title": "Form (WS Form)",
+    "category": "blockstudio",
+    "description": "Add a form to your web page using WS Form PRO.",
+    "icon": "feedback",
+    "supports": {
+        "className": false,
+        "align": [
+            "wide",
+            "full"
+        ],
+        "ariaLabel": true,
+        "color": {
+            "background": true
+        },
+        "background": {
+            "backgroundImage": true,
+            "backgroundSize": true
+        },
+        "dimensions": {
+            "minHeight": true,
+            "aspectRatio": true
+        },
+        "customClassName": true,
+        "spacing": {
+            "padding": true,
+            "margin": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "ws_form",
+                "type": "text",
+                "label": "Form",
+                "required": true
+            },
+            {
+                "id": "element_id",
+                "type": "text",
+                "label": "Id",
+                "help": "Set an id on the form element."
+            }
+        ]
+    }
+}

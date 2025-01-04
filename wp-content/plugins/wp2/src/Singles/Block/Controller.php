@@ -14,8 +14,15 @@ class Controller
     private array $block_lib_dirs = [];
 
     public function __construct()
-    {
+    {   
+        $this->add_scan_directory(WP2_PATH . 'src');
+        add_action('init', [$this, 'init']);
         $this->initialize();
+    }
+
+    public function init()
+    {
+        do_action('qm/debug', 'Block Controller');
     }
 
     private function initialize(): void
@@ -27,6 +34,7 @@ class Controller
     public function add_scan_directory(string $dir): void
     {
         $sanitized_dir = sanitize_text_field($dir);
+        
         if (is_dir($sanitized_dir)) {
             $this->dirs[] = rtrim($sanitized_dir, '/');
         } else {
@@ -44,12 +52,14 @@ class Controller
                 new RecursiveDirectoryIterator($dir, \FilesystemIterator::SKIP_DOTS),
                 RecursiveIteratorIterator::SELF_FIRST
             );
-
+    
             foreach ($iterator as $item) {
+                error_log('Scanning: ' . $item->getPathname());
+    
                 if ($item->isDir()) {
                     $manifest_path = $item->getPathname() . '/block-manifest.json';
-
                     if (file_exists($manifest_path)) {
+                        error_log('Found manifest in: ' . $item->getPathname());
                         $this->block_type_dirs[] = $item->getPathname();
                         $this->scan_for_block_libraries($item->getPathname());
                     }

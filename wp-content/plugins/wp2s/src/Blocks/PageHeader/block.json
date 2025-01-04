@@ -1,0 +1,117 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/page-header",
+    "title": "Page Header",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "parent": [
+        "wp2s/page"
+    ],
+    "__experimental": true,
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "tagName": true
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "metadata": {
+                                        "name": "Inner"
+                                    },
+                                    "align": "full",
+                                    "style": {
+                                        "spacing": {
+                                            "padding": {
+                                                "top": "var:preset|spacing|80",
+                                                "bottom": "var:preset|spacing|80"
+                                            }
+                                        },
+                                        "border": {
+                                            "bottom": {
+                                                "color": "var:preset|color|accent-3",
+                                                "width": "5px"
+                                            }
+                                        }
+                                    },
+                                    "backgroundColor": "light",
+                                    "layout": {
+                                        "type": "constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/group",
+                                        "attributes": {
+                                            "align": "wide",
+                                            "layout": {
+                                                "type": "default"
+                                            }
+                                        },
+                                        "innerBlocks": [
+                                            {
+                                                "name": "core/group",
+                                                "attributes": {
+                                                    "style": {
+                                                        "spacing": {
+                                                            "blockGap": "0"
+                                                        }
+                                                    },
+                                                    "layout": {
+                                                        "type": "flex",
+                                                        "orientation": "vertical",
+                                                        "flexWrap": "nowrap",
+                                                        "justifyContent": "stretch"
+                                                    }
+                                                },
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "core/heading",
+                                                        "attributes": {
+                                                            "level": 1,
+                                                            "fontSize": "heading-1",
+                                                            "content": "Enter Title"
+                                                        }
+                                                    },
+                                                    {
+                                                        "name": "core/paragraph",
+                                                        "attributes": {
+                                                            "fontSize": "page-excerpt",
+                                                            "content": "Enter Description"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/navigation",
+    "title": "Navigation",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "label": "Layout",
+                "type": "select",
+                "allowNull": "Select Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": []
+                    }
+                ]
+            }
+        ]
+    }
+}

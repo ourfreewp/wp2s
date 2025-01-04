@@ -1,0 +1,12 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/faq",
+    "title": "FAQ",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true
+    }
+}

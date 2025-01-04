@@ -1,0 +1,39 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/page",
+    "title": "Page",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "allowedBlocks": [
+        "wp2s/page-header",
+        "wp2s/page-section",
+        "wp2s/page-data",
+        "wp2s/page-footer"
+    ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "lock": true
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        },
+        "layout": {
+            "type": "string",
+            "default": "constrained"
+        }
+    },
+    "blockstudio": true
+}

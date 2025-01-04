@@ -1,0 +1,87 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/article-header",
+    "title": "Article Header",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "allowedBlocks": [
+        "core/group",
+        "core/post-title",
+        "core/post-terms",
+        "core/post-excerpt",
+        "core/post-date",
+        "core/post-featured-image",
+        "core/separator",
+        "wp2s/share"
+    ],
+    "ancestor": [
+        "wp2s/single"
+    ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "default": 1,
+                "fallback": 1,
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/post-title",
+                                        "attributes": {
+                                            "level": 1,
+                                            "fontSize": "heading-3",
+                                            "style": {
+                                                "typography": {
+                                                    "fontStyle": "normal",
+                                                    "fontWeight": "700"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "name": "core/post-excerpt"
+                                    },
+                                    {
+                                        "name": "core/post-date"
+                                    },
+                                    {
+                                        "name": "core/post-featured-image"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

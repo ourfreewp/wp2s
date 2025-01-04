@@ -3,16 +3,27 @@
 
 namespace WP2\Singles;
 
-// Exit if accessed directly.
 defined('ABSPATH') or exit;
 
-// define plugin path, url, and version
-define('WP2_SINGLES_PATH', plugin_dir_path(__FILE__));
-define('WP2_SINGLES_URL', plugin_dir_url(__FILE__));
-define('WP2_SINGLES_VERSION', '1.0.0');
+
 
 class Controller
 {
+
     public function __construct()
-    {}
+    {
+        add_action( 'init', array( $this, 'init' ) );
+        new Block\Controller();
+    }
+
+    public function init()
+    {
+        do_action( 'qm/debug', 'Singles Controller' );
+    }
+
 }
+
+
+
+
+

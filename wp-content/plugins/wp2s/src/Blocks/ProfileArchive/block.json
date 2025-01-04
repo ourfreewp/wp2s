@@ -1,0 +1,9 @@
+{
+	"$schema": "https://app.blockstudio.dev/schema",
+	"name": "wp2s/profile-archive",
+	"title": "Profiles",
+	"category": "text",
+	"icon": "star-filled",
+    "description": "",
+    "blockstudio": true
+}

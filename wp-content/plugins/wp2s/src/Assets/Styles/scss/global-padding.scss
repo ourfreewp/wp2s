@@ -1,0 +1,9 @@
+.wp-site-blocks > * {
+    &.wp-block-template-part > .has-global-padding,
+    &.has-global-padding {
+        @include media-breakpoint-down(md) {
+            padding-left: var(--wp--preset--spacing--50);
+            padding-right: var(--wp--preset--spacing--50);
+        }
+    }
+}

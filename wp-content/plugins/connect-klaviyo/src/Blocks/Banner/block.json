@@ -1,0 +1,63 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2-klaviyo/banner",
+    "title": "Banner (Klaviyo)",
+    "category": "blockstudio",
+    "description": "Add a banner to your web page using Klaviyo.",
+    "icon": "feedback",
+    "supports": {
+        "className": false,
+        "align": [
+            "wide",
+            "full"
+        ],
+        "ariaLabel": true,
+        "color": {
+            "background": true
+        },
+        "background": {
+            "backgroundImage": true,
+            "backgroundSize": true
+        },
+        "dimensions": {
+            "minHeight": true,
+            "aspectRatio": true
+        },
+        "customClassName": true,
+        "spacing": {
+            "padding": true,
+            "margin": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "form_id",
+                "type": "text",
+                "label": "Form",
+                "required": true
+            },
+            {
+                "id": "height",
+                "type": "text",
+                "label": "Height",
+                "required": true
+            },
+            {
+                "id": "position",
+                "type": "radio",
+                "label": "Position",
+                "options": [
+                    {
+                        "label": "Top",
+                        "value": "top"
+                    },
+                    {
+                        "label": "Bottom",
+                        "value": "bottom"
+                    }
+                ]
+            }
+        ]
+    }
+}

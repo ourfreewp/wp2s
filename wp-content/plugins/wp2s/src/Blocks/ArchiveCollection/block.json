@@ -1,0 +1,41 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/archive-collection",
+    "title": "Archive Collection",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "template",
+                "type": "select",
+                "label": "Template",
+                "allowNull": "Select Template",
+                "options": [
+                    {
+                        "value": "all",
+                        "label": "All"
+                    },
+                    {
+                        "value": "directory",
+                        "label": "Directory"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,21 @@
+.wp-site-blocks {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+  min-height: 100vh;
+  
+  >header {
+    margin-top: 0;
+  }
+
+  >main {
+    flex: 1 1 auto;
+  }
+
+  >footer {
+    margin-top: auto;
+    margin-bottom: 0;
+  }
+
+}

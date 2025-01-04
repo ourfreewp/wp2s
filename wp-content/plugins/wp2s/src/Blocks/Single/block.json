@@ -1,0 +1,107 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/single",
+    "title": "Single",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "default": 1,
+                "fallback": 1,
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "layout":{
+                                        "type":"constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "wp2s/single-header",
+                                        "attributes": {
+                                            "align": "full"
+                                        }
+                                    },
+                                    {
+                                        "name": "core/group",
+                                        "attributes": {
+                                            "align": "full",
+                                            "layout": {
+                                                "type": "constrained"
+                                            }
+                                        },
+                                        "innerBlocks": [
+                                            {
+                                                "name": "core/columns",
+                                                "attributes": {
+                                                    "align": "wide"
+                                                },
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "core/column",
+                                                        "innerBlocks": [
+                                                            {
+                                                                "name": "wp2s/single-content"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "name": "core/column",
+                                                        "attributes": {
+                                                            "width": "360px"
+                                                        },
+                                                        "innerBlocks": [
+                                                            {
+                                                                "name": "wp2s/single-aside"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "name": "wp2s/single-footer",
+                                        "attributes": {
+                                            "align": "full"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

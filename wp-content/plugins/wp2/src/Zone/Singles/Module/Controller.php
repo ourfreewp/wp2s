@@ -1,6 +1,7 @@
 <?php
 // Path: wp-content/plugins/wp2/Zone/Singles/Module/Controller.php
-namespace WP2\Singles\PostType;
+
+namespace WP2\Zone\Singles\Module;
 
 class Module extends Controller
 {
@@ -28,6 +29,7 @@ class Module extends Controller
             'publicly_queryable'  => true,
             'show_ui'             => true,
             'show_in_rest'        => true,
+            'show_in_menu'        => true,
             'menu_icon'           => 'dashicons-admin-generic',
             'supports'            => ['title', 'editor'],
             'rest_base'           => 'wp2/modules',

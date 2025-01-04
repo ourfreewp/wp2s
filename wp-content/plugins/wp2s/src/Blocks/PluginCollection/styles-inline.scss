@@ -1,0 +1,61 @@
+.wp2s-plugins {
+
+    list-style: none;
+    padding: 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+    grid-gap: 20px;
+
+
+}
+
+.wp2s-plugin {
+    border: var(--wp--custom--border--width) var(--wp--custom--border--style) var(--wp--preset--color--separator);
+}
+
+.wp2s-plugin__header {
+
+}
+
+.wp2s-plugin__content {
+    padding: var(--wp--preset--spacing--50);
+}
+
+.wp2s-plugin__thumbnail {
+
+}
+
+.wp2s-plugin__name {
+
+}
+
+.wp2s-plugin__description {
+
+}
+
+.wp2s-plugin__meta {
+
+}
+
+.wp2s-plugin__meta-item {
+
+}
+
+.wp2s-plugin__meta-label {
+
+}
+
+.wp2s-plugin__meta-value {
+
+}
+
+
+.wp2s-plugin__footer {
+
+}
+
+.wp2s-plugin__link {
+
+}

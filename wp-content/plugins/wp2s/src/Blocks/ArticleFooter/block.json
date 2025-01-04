@@ -1,0 +1,67 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/article-footer",
+    "title": "Article Footer",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "__experimental": true,
+    "allowedBlocks": [
+        "core/group",
+        "core/post-navigation-link",
+        "core/post-terms",
+        "core/post-author",
+        "core/comments",
+        "core/post-comments-form"
+    ],
+    "ancestor": [
+        "wp2s/article"
+    ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "default": 1,
+                "fallback": 1,
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/post-author"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

@@ -1,9 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Target anchor and button elements within elements with the class '.beacon-contact'
+document.addEventListener("DOMContentLoaded", function() {
     const beaconElements = document.querySelectorAll('.beacon-contact a, .beacon-contact button');
-
-    // Add click event listener to beacon elements
+    
     beaconElements.forEach((element) => {
         element.addEventListener('click', (event) => {
             event.preventDefault();
@@ -14,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Target buttons within elements having 'data-beacon-id' attribute
     const beacons = document.querySelectorAll('[data-beacon-id] .wp-element-button');
 
     beacons.forEach(beacon => {
@@ -35,5 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
             Beacon('toggle');
         });
     });
-
 });

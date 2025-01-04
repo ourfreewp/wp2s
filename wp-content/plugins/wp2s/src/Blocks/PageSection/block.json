@@ -1,0 +1,116 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/page-section",
+    "title": "Page Section",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "parent": [
+        "wp2s/page"
+    ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        },
+        "layout": {
+            "type": "string",
+            "default": "constrained"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "metadata": {
+                                        "name": "Inner"
+                                    },
+                                    "align": "full",
+                                    "style": {
+                                        "spacing": {
+                                            "padding": {
+                                                "top": "var:preset|spacing|80",
+                                                "bottom": "var:preset|spacing|80"
+                                            }
+                                        },
+                                        "border": {
+                                            "bottom": {
+                                                "color": "var:preset|color|separator",
+                                                "width": "5px"
+                                            }
+                                        }
+                                    },
+                                    "backgroundColor": "light",
+                                    "layout": {
+                                        "type": "constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/group",
+                                        "attributes": {
+                                            "align": "wide",
+                                            "layout": {
+                                                "type": "default"
+                                            }
+                                        },
+                                        "innerBlocks": [
+                                            {
+                                                "name": "core/group",
+                                                "attributes": {
+                                                    "style": {
+                                                        "spacing": {
+                                                            "blockGap": "0"
+                                                        }
+                                                    },
+                                                    "layout": {
+                                                        "type": "flex",
+                                                        "orientation": "vertical",
+                                                        "flexWrap": "nowrap",
+                                                        "justifyContent": "stretch"
+                                                    }
+                                                },
+                                                "innerBlocks": [
+                                                    {
+                                                        "name": "core/paragraph",
+                                                        "attributes": {
+                                                            "content": "This is a page section block. You can add any block inside this block."
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

@@ -1,0 +1,17 @@
+.wp-block-navigation__responsive-container {
+    &.is-menu-open {
+        .wp-block-navigation__responsive-dialog {
+            margin-top: 0 !important;
+            padding: 3rem 1.5rem;
+        }
+
+        .wp-block-navigation__responsive-container-close {
+            right: .75rem;
+            top: .75rem;
+        }
+
+        .wp-block-navigation__responsive-container-content {
+            padding: 0 !important;
+        }
+    }
+}

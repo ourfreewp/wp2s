@@ -1,0 +1,90 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/archive-header",
+    "title": "Archive Header",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "__experimental": true,
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "tagName": true
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "metadata": {
+                                        "name": "Inner"
+                                    },
+                                    "align": "full",
+                                    "style": {
+                                        "spacing": {
+                                            "padding": {
+                                                "top": "var:preset|spacing|80",
+                                                "bottom": "var:preset|spacing|80"
+                                            }
+                                        },
+                                        "border": {
+                                            "bottom": {
+                                                "color": "var:preset|color|accent-3",
+                                                "width": "5px"
+                                            }
+                                        }
+                                    },
+                                    "backgroundColor": "light",
+                                    "layout": {
+                                        "type": "constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/group",
+                                        "attributes": {
+                                            "metadata": {
+                                                "name": "Content"
+                                            },
+                                            "align": "wide",
+                                            "layout": {
+                                                "type": "default"
+                                            }
+                                        },
+                                        "innerBlocks": [
+                                            {
+                                                "name": "wp2s/archive-name"
+                                            },
+                                            {
+                                                "name": "wp2s/archive-description"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

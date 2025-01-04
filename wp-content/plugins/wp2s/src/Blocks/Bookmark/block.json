@@ -1,0 +1,28 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/bookmark-single",
+    "title": "Bookmark",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "template",
+                "type": "select",
+                "label": "Template",
+                "allowNull": "Select Template",
+                "options": [
+                    {
+                        "value": "default",
+                        "label": "default"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/landing-page-content",
+    "title": "Landing Page Content",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "__experimental": true,
+    "supports": {
+        "align": [
+            "full",
+            "wide"
+        ],
+        "className": false,
+        "customClassName": true,
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        },
+        "tagName": true
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "metadata": {
+                                        "name": "Inner"
+                                    },
+                                    "align": "full",
+                                    "layout": {
+                                        "type": "constrained"
+                                    },
+                                    "lock": {
+                                        "delete": true,
+                                        "move": true
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/group",
+                                        "attributes": {
+                                            "tagName": "section",
+                                            "metadata": {
+                                                "name": "Section"
+                                            },
+                                            "align": "wide",
+                                            "layout": {
+                                                "type": "constrained"
+                                            },
+                                            "lock": {
+                                                "delete": true,
+                                                "move": true
+                                            }
+                                        },
+                                        "innerBlocks": [
+                                            {
+                                                "name": "core/paragraph"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

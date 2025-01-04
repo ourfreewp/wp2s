@@ -1,0 +1,41 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/module-collection",
+    "title": "Module Collection",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "collections",
+                "type": "select",
+                "allowNull": "Select Collections",
+                "label": "Collections",
+                "populate": {
+                    "type": "query",
+                    "query": "terms",
+                    "fetch": true,
+                    "arguments": {
+                        "taxonomy": "wp2s_collection",
+                        "hide_empty": false,
+                        "number": 20
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -154,6 +154,10 @@
 				"xxl": "1320px"
 			},
 			"spacer": "clamp(0.5rem, 0.25rem + 1.25vw, 1.125rem)",
+			"spacing": {
+				"padding-left": "1.125rem",
+				"padding-right": "1.125rem"
+			},
 			"zIndex": {
 				"dropdown": 1000,
 				"fixed": 1030,
@@ -230,7 +234,7 @@
 			]
 		},
 		"typography": {
-			"customFontSize": false,
+			"customFontSize": true,
 			"defaultFontSizes": false,
 			"dropCap": true,
 			"fluid": true,
@@ -673,16 +677,16 @@
 			},
 			"core/group": {
 				"spacing": {
-					"blockGap": "var(--wp--preset--spacing--60)",
-					"padding": {
-						"bottom": "0",
-						"left": "0",
-						"right": "0",
-						"top": "0"
-					}
+					"blockGap": "var(--wp--preset--spacing--60)"
 				}
 			},
 			"core/heading": {
+				"spacing": {
+					"margin": {
+						"bottom": "0",
+						"top": "0"
+					}
+				},
 				"typography": {
 					"fontStyle": "normal",
 					"fontWeight": "600"
@@ -701,12 +705,19 @@
 				}
 			},
 			"core/navigation": {
+				"css": "& a {\nfont-family: inherit;\n}",
 				"spacing": {
 					"blockGap": "0.8rem"
 				},
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--navigation-item)",
+					"fontFamily": "var(--wp--preset--font-family--jetbrains-mono)",
+					"fontSize": "var(--wp--preset--font-size--meta)",
 					"textTransform": "uppercase"
+				}
+			},
+			"core/navigation-link": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--jetbrains-mono)"
 				}
 			},
 			"core/paragraph": {
@@ -755,6 +766,7 @@
 				}
 			},
 			"core/post-title": {
+				"css": "& > a {\nfont-style: inherit;\nfont-size: inherit;\nfont-weight: inherit;\n}",
 				"typography": {
 					"fontSize": "var(--wp--preset--font-size--title)",
 					"fontStyle": "normal",
@@ -805,6 +817,7 @@
 				}
 			},
 			"core/query-pagination": {
+				"css": "& a {\nline-height: inherit;\n}",
 				"elements": {
 					"link": {
 						":hover": {
@@ -896,6 +909,11 @@
 					"fontSize": "var(--wp--preset--font-size--quote)"
 				}
 			},
+			"core/search": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--page-meta)"
+				}
+			},
 			"core/separator": {
 				"spacing": {
 					"margin": {
@@ -939,7 +957,7 @@
 			"core/social-links": {
 				"spacing": {
 					"blockGap": {
-						"top": "222rem"
+						"top": "var(--wp--preset--spacing--40)"
 					}
 				}
 			},
@@ -1042,8 +1060,8 @@
 			},
 			"padding": {
 				"bottom": "0",
-				"left": "0",
-				"right": "0",
+				"left": "var(--wp--custom--spacing--padding-left)",
+				"right": "var(--wp--custom--spacing--padding-right)",
 				"top": "0"
 			}
 		},

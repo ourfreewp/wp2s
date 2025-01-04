@@ -1,0 +1,10 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/pixel-adroll",
+    "title": "AdRoll",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "parent": [],
+    "blockstudio": true
+}

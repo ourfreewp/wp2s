@@ -17,5 +17,6 @@ class Controller
     {
         new Themes\Controller();
         new Settings\Controller();
+        
     }
 }

@@ -1,0 +1,61 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/plugin-collection",
+    "title": "Plugin Collection",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "template",
+                "type": "select",
+                "label": "Template",
+                "allowNull": "Select Template",
+                "options": [
+                    {
+                        "value": "all",
+                        "label": "All"
+                    },
+                    {
+                        "value": "maker",
+                        "label": "Maker"
+                    },
+                    {
+                        "value": "maker-free",
+                        "label": "Maker Free"
+                    },
+                    {
+                        "value": "maker-pro",
+                        "label": "Maker Pro"
+                    },
+                    {
+                        "value": "supported",
+                        "label": "Supported"
+                    },
+                    {
+                        "value": "supported-free",
+                        "label": "Supported Free"
+                    },
+                    {
+                        "value": "supported-pro",
+                        "label": "Supported Pro"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -17,7 +17,7 @@ class Controller
     {
         add_action('load-edit.php', [$this, 'conditional_sync'], 999);
         add_action('init', [$this, 'load_modules'], 999);
-        add_action('init', [$this, 'debug_modules'], 999);
+        // add_action('init', [$this, 'debug_modules'], 999);
     }
 
     public function conditional_sync()

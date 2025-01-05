@@ -1,0 +1,8 @@
+{
+    "singular": "Host",
+    "plural": "Hosts",
+    "archive": "hosts",
+    "rest": "hosts",
+    "single": "host",
+    "type": "host"
+}

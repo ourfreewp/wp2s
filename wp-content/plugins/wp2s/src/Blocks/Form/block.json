@@ -1,0 +1,62 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/form",
+    "title": "Form",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "__experimental": true,
+    "ancestor": [ ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One — WS Form",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "align": "full",
+                                    "layout": {
+                                        "type": "constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "wp2-ws-form/form",
+                                        "attributes": {
+                                            "align": "full"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

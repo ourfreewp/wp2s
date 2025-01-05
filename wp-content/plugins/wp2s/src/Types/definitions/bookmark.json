@@ -1,0 +1,8 @@
+{
+    "singular": "Bookmark",
+    "plural": "Bookmarks",
+    "archive": "bookmarks",
+    "rest": "bookmarks",
+    "single": "bookmark",
+    "type": "bookmark"
+}

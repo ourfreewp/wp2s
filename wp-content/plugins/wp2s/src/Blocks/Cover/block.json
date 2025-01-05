@@ -1,0 +1,73 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/article",
+    "title": "Article",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "__experimental": true,
+    "allowedBlocks": [
+        "core/group",
+        "core/heading",
+        "core/paragraph",
+        "wp2s/article-header",
+        "wp2s/article-content",
+        "wp2s/article-footer"
+    ],
+    "ancestor": [
+        "wp2s/single"
+    ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "default": 1,
+                "fallback": 1,
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "innerBlocks": [
+                                    {
+                                        "name": "wp2s/article-header"
+                                    },
+                                    {
+                                        "name": "wp2s/article-content"
+                                    },
+                                    {
+                                        "name": "wp2s/article-footer"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Layout"
+            }
+        ]
+    }
+}

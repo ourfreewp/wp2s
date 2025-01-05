@@ -1,0 +1,7 @@
+{
+    "singular": "Alert",
+    "plural": "Alerts",
+    "archive": "alerts",
+    "rest": "alerts",
+    "single": "alert"
+}

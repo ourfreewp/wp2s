@@ -61,6 +61,35 @@
                                 ]
                             }
                         ]
+                    },
+                    {
+                        "value": "2",
+                        "label": "Archive — Two",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "layout": {
+                                        "type": "constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "wp2s/archive",
+                                        "attributes": {
+                                            "blockstudio": {
+                                                "attributes": {
+                                                    "layout": {
+                                                        "value": "1",
+                                                        "label": "One"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
                     }
                 ],
                 "allowNull": "Select Layout"

@@ -1,0 +1,8 @@
+{
+    "singular": "Job Posting",
+    "plural": "Job Postings",
+    "archive": "jobs",
+    "rest": "jobs",
+    "single": "job",
+    "type": "job"
+}

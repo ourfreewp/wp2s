@@ -1,0 +1,8 @@
+{
+    "singular": "Entitlement",
+    "plural": "Entitlements",
+    "archive": "entitlements",
+    "rest": "entitlements",
+    "single": "entitlement",
+    "type": "entitlement"
+}

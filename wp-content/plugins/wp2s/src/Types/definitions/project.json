@@ -1,0 +1,8 @@
+{
+    "singular": "Project",
+    "plural": "Projects",
+    "archive": "projects",
+    "rest": "projects",
+    "single": "project",
+    "type": "project"
+}

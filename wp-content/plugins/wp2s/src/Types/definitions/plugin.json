@@ -1,0 +1,8 @@
+{
+    "singular": "Plugin",
+    "plural": "Plugins",
+    "archive": "plugins",
+    "rest": "plugins",
+    "single": "plugin",
+    "type": "plugin"
+}

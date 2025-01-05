@@ -1,0 +1,7 @@
+{
+    "singular": "Post",
+    "plural": "Posts",
+    "archive": "posts",
+    "rest": "posts",
+    "single": "post"
+}

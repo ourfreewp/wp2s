@@ -1,0 +1,8 @@
+{
+    "singular": "Issue",
+    "plural": "Issues",
+    "archive": "issues",
+    "rest": "issues",
+    "single": "issue",
+    "type": "issue"
+}

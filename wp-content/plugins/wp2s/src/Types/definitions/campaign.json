@@ -1,0 +1,7 @@
+{
+    "singular": "Campaign",
+    "plural": "Campaigns",
+    "archive": "campaigns",
+    "rest": "campaigns",
+    "single": "campaign"
+}

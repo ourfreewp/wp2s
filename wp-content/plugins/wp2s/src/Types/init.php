@@ -11,72 +11,100 @@ class Controller
     private $textdomain = 'wp2s';
     private $prefix = 'wp2s_';
     private $namespace = 'wp2/v1';
-
-    private $tables = [];
+    private $definition_path = WP2S_PLUGIN_DIR . 'src/Types/definitions/';
+    private $definitions = [];
+    private $definition_cache_key = 'wp2s_definitions_cache';
 
     public function __construct()
     {
-        $this->tables = $this->defined_types();
+
+        $this->definitions = $this->get_definitions();
 
         add_action('init', [$this, 'register_post_types'], 50);
         add_filter('rwmb_meta_boxes', [$this, 'register_meta_boxes'], 50);
         add_action('rest_api_init', [$this, 'register_routes'], 50);
+
+        // add_action('init', [$this, 'debug_definitions'], 50);
+
+    }
+
+    public function load_definitions()
+    {
+        
+        $cached_definitions = get_transient($this->definition_cache_key);
+    
+        if ($cached_definitions === false) {
+            // Cache miss – regenerate definitions
+            $definitions = $this->get_definitions();
+    
+            // Store in transient for 1 hour
+            set_transient($cache_key, $definitions, HOUR_IN_SECONDS);
+    
+            do_action('qm/debug', 'Regenerated definitions and set transient.');
+        } else {
+            // Cache hit
+            $definitions = $cached_definitions;
+            do_action('qm/debug', 'Loaded definitions from cache.');
+        }
+    
+        $this->definitions = $definitions;
+
     }
 
     public function register_post_types()
     {
-        if (empty($this->tables)) {
+        if (empty($this->definitions)) {
             do_action('qm/debug', 'No tables to register');
             return;
         }
 
-        foreach ($this->tables as $table) {
-            if (!isset($table['singular'], $table['plural'], $table['single'], $table['archive'], $table['rest'])) {
-                do_action('qm/debug', 'Missing table definition for ' . print_r($table, true));
+        foreach ($this->definitions as $definition) {
+            if (!isset($definition['singular'], $definition['plural'], $definition['single'], $definition['archive'], $definition['rest'])) {
+                do_action('qm/debug', 'Missing definition for ' . print_r($definition, true));
                 continue;
             }
 
-            $labels = $this->generate_labels($table);
-            $args   = $this->generate_args($labels, $table);
-            $post_type = $this->prefix . strtolower($table['type'] ?? $table['single']);
+            $labels = $this->generate_labels($definition);
+            $args   = $this->generate_args($labels, $definition);
+            $post_type = $this->prefix . strtolower($definition['type'] ?? $definition['single']);
 
             register_post_type($post_type, $args);
         }
     }
 
-    private function generate_labels($table)
+    private function generate_labels($definition)
     {
         return [
-            'name'                     => __($table['plural'], $this->textdomain),
-            'singular_name'            => __($table['singular'], $this->textdomain),
+            'name'                     => __($definition['plural'], $this->textdomain),
+            'singular_name'            => __($definition['singular'], $this->textdomain),
             'add_new'                  => __('Add New', $this->textdomain),
-            'add_new_item'             => __("Add New {$table['singular']}", $this->textdomain),
-            'edit_item'                => __("Edit {$table['singular']}", $this->textdomain),
-            'new_item'                 => __("New {$table['singular']}", $this->textdomain),
-            'view_item'                => __("View {$table['singular']}", $this->textdomain),
-            'view_items'               => __("View {$table['plural']}", $this->textdomain),
-            'search_items'             => __("Search {$table['plural']}", $this->textdomain),
-            'not_found'                => __("No {$table['archive']} found.", $this->textdomain),
-            'not_found_in_trash'       => __("No {$table['archive']} found in Trash.", $this->textdomain),
-            'parent_item_colon'        => __("Parent {$table['singular']}:", $this->textdomain),
-            'all_items'                => __("All {$table['plural']}", $this->textdomain),
-            'archives'                 => __("{$table['singular']} Archives", $this->textdomain),
-            'attributes'               => __("{$table['singular']} Attributes", $this->textdomain),
-            'insert_into_item'         => __("Insert into {$table['singular']}", $this->textdomain),
-            'uploaded_to_this_item'    => __("Uploaded to this {$table['singular']}", $this->textdomain),
-            'menu_name'                => __($table['plural'], $this->textdomain),
-            'filter_items_list'        => __("Filter {$table['archive']} list", $this->textdomain),
-            'items_list_navigation'    => __("{$table['plural']} list navigation", $this->textdomain),
-            'items_list'               => __("{$table['plural']} list", $this->textdomain),
-            'item_published'           => __("{$table['singular']} published.", $this->textdomain),
-            'item_updated'             => __("{$table['singular']} updated.", $this->textdomain),
+            'add_new_item'             => __("Add New {$definition['singular']}", $this->textdomain),
+            'edit_item'                => __("Edit {$definition['singular']}", $this->textdomain),
+            'new_item'                 => __("New {$definition['singular']}", $this->textdomain),
+            'view_item'                => __("View {$definition['singular']}", $this->textdomain),
+            'view_items'               => __("View {$definition['plural']}", $this->textdomain),
+            'search_items'             => __("Search {$definition['plural']}", $this->textdomain),
+            'not_found'                => __("No {$definition['archive']} found.", $this->textdomain),
+            'not_found_in_trash'       => __("No {$definition['archive']} found in Trash.", $this->textdomain),
+            'parent_item_colon'        => __("Parent {$definition['singular']}:", $this->textdomain),
+            'all_items'                => __("All {$definition['plural']}", $this->textdomain),
+            'archives'                 => __("{$definition['singular']} Archives", $this->textdomain),
+            'attributes'               => __("{$definition['singular']} Attributes", $this->textdomain),
+            'insert_into_item'         => __("Insert into {$definition['singular']}", $this->textdomain),
+            'uploaded_to_this_item'    => __("Uploaded to this {$definition['singular']}", $this->textdomain),
+            'menu_name'                => __($definition['plural'], $this->textdomain),
+            'filter_items_list'        => __("Filter {$definition['archive']} list", $this->textdomain),
+            'items_list_navigation'    => __("{$definition['plural']} list navigation", $this->textdomain),
+            'items_list'               => __("{$definition['plural']} list", $this->textdomain),
+            'item_published'           => __("{$definition['singular']} published.", $this->textdomain),
+            'item_updated'             => __("{$definition['singular']} updated.", $this->textdomain),
         ];
     }
 
-    private function generate_args($labels, $table)
+    private function generate_args($labels, $definition)
     {
         return [
-            'label'               => __($table['plural'], $this->textdomain),
+            'label'               => __($definition['plural'], $this->textdomain),
             'labels'              => $labels,
             'public'              => true,
             'hierarchical'        => true,
@@ -87,17 +115,17 @@ class Controller
             'show_in_admin_bar'   => false,
             'show_in_rest'        => true,
             'show_in_menu'        => false,
-            'rest_base'           => $table['rest'],
+            'rest_base'           => $definition['rest'],
             'rest_namespace'      => $this->namespace,
             'query_var'           => true,
             'can_export'          => true,
             'delete_with_user'    => false,
             'has_archive'         => false,
             'rewrite'             => [
-                'slug'       => strtolower($table['single']),
+                'slug'       => strtolower($definition['single']),
                 'with_front' => false,
             ],
-            'menu_icon'           => $table['icon'] ?? 'dashicons-admin-generic',
+            'menu_icon'           => $definition['icon'] ?? 'dashicons-admin-generic',
             'capability_type'     => 'post',
             'supports'            => [
                 'title',
@@ -116,7 +144,7 @@ class Controller
     public function register_meta_boxes($meta_boxes)
     {
         $defined_types = $this->defined_type_slugs();
-        $added_types = $this->added_type_slugs();
+        $added_types = $this->added_definition_slugs();
     
         $all_types = array_merge($defined_types, $added_types);
     
@@ -134,7 +162,8 @@ class Controller
 
     protected function defined_type_slugs()
     {
-        $defined_types = $this->defined_types();
+        $defined_types = $this->get_definitions();
+
         $slugs = [];
     
         foreach ($defined_types as $type_data) {
@@ -146,7 +175,7 @@ class Controller
         return $slugs;
     }
 
-    protected function added_type_slugs()
+    protected function added_definition_slugs()
     {
         return [
             'page' => [
@@ -194,6 +223,32 @@ class Controller
         }, $fields);
 
         return rest_ensure_response($field_names);
+    }
+
+    /**
+     * Get all definition json files and merge them into a single array. definition path with type.json name format.
+     * defintions are merged in with defined types.
+     * @return array
+     */
+
+    public function get_definitions()
+    {
+        $definitions = [];
+
+        $dir = $this->definition_path;
+
+       // bring all definitions into an array and return the array
+        $files = glob($dir . '*.json');
+
+        foreach ($files as $file) {
+            $json = file_get_contents($file);
+            $data = json_decode($json, true);
+            // push the data into the definitions array don't merge
+            $definitions[] = $data;
+        }
+
+
+        return $definitions;
     }
 
     /**
@@ -352,558 +407,6 @@ class Controller
 
             return $field;
         }, array_keys($fields_data), $fields_data);
-    }
-
-    public function defined_types()
-    {
-        $types =  [
-            [
-                'singular' => 'Module',
-                'plural'   => 'Modules',
-                'archive'  => 'modules',
-                'rest'     => 'modules',
-                'single'   => 'module',
-                'type'     => 'module',
-            ],
-            [
-                'singular' => 'Project',
-                'plural'   => 'Projects',
-                'archive'  => 'projects',
-                'rest'     => 'projects',
-                'single'   => 'project',
-                'type'     => 'project',
-            ],
-            [
-                'singular' => 'Issue',
-                'plural'   => 'Issues',
-                'archive'  => 'issues',
-                'rest'     => 'issues',
-                'single'   => 'issue',
-                'type'     => 'issue',
-            ],
-            [
-                'singular' => 'Roadmap',
-                'plural'   => 'Roadmaps',
-                'archive'  => 'roadmaps',
-                'rest'     => 'roadmaps',
-                'single'   => 'roadmap',
-                'type'     => 'roadmap',
-            ],
-            [
-                'singular' => 'Job Posting',
-                'plural'   => 'Job Postings',
-                'archive'  => 'jobs',
-                'rest'     => 'jobs',
-                'single'   => 'job',
-                'type'     => 'job',
-            ],
-            [
-                'singular' => 'Entitlement',
-                'plural'   => 'Entitlements',
-                'archive'  => 'entitlements',
-                'rest'     => 'entitlements',
-                'single'   => 'entitlement',
-                'type'     => 'entitlement',
-            ],
-            [
-                'singular' => 'Bookmark',
-                'plural'   => 'Bookmarks',
-                'archive'  => 'bookmarks',
-                'rest'     => 'bookmarks',
-                'single'   => 'bookmark',
-                'type'     => 'bookmark',
-            ],
-            [
-                'singular' => 'Token',
-                'plural'   => 'Tokens',
-                'archive'  => 'tokens',
-                'rest'     => 'tokens',
-                'single'   => 'token',
-                'type'     => 'token',
-            ],
-            [
-                'singular' => 'Member',
-                'plural'   => 'Members',
-                'archive'  => 'members',
-                'rest'     => 'members',
-                'single'   => 'member',
-                'type'     => 'member',
-            ],
-            [
-                'singular' => 'Publisher',
-                'plural'   => 'Publishers',
-                'archive'  => 'publishers',
-                'rest'     => 'publishers',
-                'single'   => 'publisher',
-                'type'     => 'publisher',
-            ],
-            [
-                'singular' => 'Agency',
-                'plural'   => 'Agencies',
-                'archive'  => 'agencies',
-                'rest'     => 'agencies',
-                'single'   => 'agency',
-                'type'     => 'agency',
-            ],
-            [
-                'singular' => 'Host',
-                'plural'   => 'Hosts',
-                'archive'  => 'hosts',
-                'rest'     => 'hosts',
-                'single'   => 'host',
-                'type'     => 'host',
-            ],
-            [
-                'singular' => 'Defined Term',
-                'plural'   => 'Defined Terms',
-                'archive'  => 'glossary',
-                'rest'     => 'glossary',
-                'single'   => 'define',
-                'type'     => 'defined_term',
-            ],
-            [
-                'singular' => 'Pattern',
-                'plural'   => 'Patterns',
-                'archive'  => 'patterns',
-                'rest'     => 'patterns',
-                'single'   => 'pattern',
-            ],
-            [
-                'singular' => 'Command',
-                'plural'   => 'Commands',
-                'archive'  => 'commands',
-                'rest'     => 'commands',
-                'single'   => 'command',
-            ],
-            [
-                'singular' => 'Variable',
-                'plural'   => 'Variables',
-                'archive'  => 'variables',
-                'rest'     => 'variables',
-                'single'   => 'variable',
-            ],
-            [
-                'singular' => 'Program',
-                'plural'   => 'Programs',
-                'archive'  => 'programs',
-                'rest'     => 'programs',
-                'single'   => 'program',
-            ],
-            [
-                'singular' => 'Plugin',
-                'plural'   => 'Plugins',
-                'archive'  => 'plugins',
-                'rest'     => 'plugins',
-                'single'   => 'plugin',
-            ],
-            [
-                'singular' => 'Extension',
-                'plural'   => 'Extensions',
-                'archive'  => 'extensions',
-                'rest'     => 'extensions',
-                'single'   => 'extension',
-            ],
-            [
-                'singular' => 'Integration',
-                'plural'   => 'Integrations',
-                'archive'  => 'integrations',
-                'rest'     => 'integrations',
-                'single'   => 'integration',
-            ],
-            [
-                'singular' => 'Alert',
-                'plural'   => 'Alerts',
-                'archive'  => 'alerts',
-                'rest'     => 'alerts',
-                'single'   => 'alert',
-            ],
-            [
-                'singular' => 'Component',
-                'plural'   => 'Components',
-                'archive'  => 'components',
-                'rest'     => 'components',
-                'single'   => 'component',
-            ],
-            [
-                'singular' => 'Gist',
-                'plural'   => 'Gists',
-                'archive'  => 'gists',
-                'rest'     => 'gists',
-                'single'   => 'gist',
-            ],
-            [
-                'singular' => 'Update',
-                'plural'   => 'Updates',
-                'archive'  => 'updates',
-                'rest'     => 'updates',
-                'single'   => 'update',
-            ],
-            [
-                'singular' => 'Product',
-                'plural'   => 'Products',
-                'archive'  => 'products',
-                'rest'     => 'products',
-                'single'   => 'product',
-            ],
-            [
-                'singular' => 'Review',
-                'plural'   => 'Reviews',
-                'archive'  => 'reviews',
-                'rest'     => 'reviews',
-                'single'   => 'review',
-            ],
-            [
-                'singular' => 'Announcement',
-                'plural'   => 'Announcements',
-                'archive'  => 'announcements',
-                'rest'     => 'announcements',
-                'single'   => 'announcement',
-            ],
-            [
-                'singular' => 'Campaign',
-                'plural'   => 'Campaigns',
-                'archive'  => 'campaigns',
-                'rest'     => 'campaigns',
-                'single'   => 'campaign',
-            ],
-            [
-                'singular' => 'Report',
-                'plural'   => 'Reports',
-                'archive'  => 'reports',
-                'rest'     => 'reports',
-                'single'   => 'report',
-            ],
-            [
-                'singular' => 'Event',
-                'plural'   => 'Events',
-                'archive'  => 'events',
-                'rest'     => 'events',
-                'single'   => 'event',
-            ],
-            [
-                'singular' => 'Upload',
-                'plural'   => 'Uploads',
-                'archive'  => 'uploads',
-                'rest'     => 'uploads',
-                'single'   => 'upload',
-            ],
-            [
-                'singular' => 'Property',
-                'plural'   => 'Properties',
-                'archive'  => 'properties',
-                'rest'     => 'properties',
-                'single'   => 'property',
-            ],
-            [
-                'singular' => 'Asset',
-                'plural'   => 'Assets',
-                'archive'  => 'assets',
-                'rest'     => 'assets',
-                'single'   => 'asset',
-            ],
-            [
-                'singular' => 'Studio',
-                'plural'   => 'Studios',
-                'archive'  => 'studios',
-                'rest'     => 'studios',
-                'single'   => 'studio',
-            ],
-            [
-                'singular' => 'Offer',
-                'plural'   => 'Offers',
-                'archive'  => 'offers',
-                'rest'     => 'offers',
-                'single'   => 'offer',
-            ],
-            [
-                'singular' => 'Form',
-                'plural'   => 'Forms',
-                'archive'  => 'forms',
-                'rest'     => 'forms',
-                'single'   => 'form',
-            ],
-            [
-                'singular' => 'Setting',
-                'plural'   => 'Settings',
-                'archive'  => 'settings',
-                'rest'     => 'settings',
-                'single'   => 'setting',
-            ],
-            [
-                'singular' => 'Brand',
-                'plural'   => 'Brands',
-                'archive'  => 'brands',
-                'rest'     => 'brands',
-                'single'   => 'brand',
-            ],
-            [
-                'singular' => 'Archive',
-                'plural'   => 'Archives',
-                'archive'  => 'archives',
-                'rest'     => 'archives',
-                'single'   => 'archive',
-            ],
-            [
-                'singular' => 'Folder',
-                'plural'   => 'Folders',
-                'archive'  => 'folders',
-                'rest'     => 'folders',
-                'single'   => 'folder',
-            ],
-            [
-                'singular' => 'Doc',
-                'plural'   => 'Docs',
-                'archive'  => 'docs',
-                'rest'     => 'docs',
-                'single'   => 'doc',
-            ],
-            [
-                'singular' => 'Vault',
-                'plural'   => 'Vaults',
-                'archive'  => 'vaults',
-                'rest'     => 'vaults',
-                'single'   => 'vault',
-            ],
-            [
-                'singular' => 'Conversation',
-                'plural'   => 'Conversations',
-                'archive'  => 'conversations',
-                'rest'     => 'conversations',
-                'single'   => 'conversation',
-            ],
-            [
-                'singular' => 'Collection',
-                'plural'   => 'Collections',
-                'archive'  => 'collections',
-                'rest'     => 'collections',
-                'single'   => 'collection',
-            ],
-            [
-                'singular' => 'Endpoint',
-                'plural'   => 'Endpoints',
-                'archive'  => 'endpoints',
-                'rest'     => 'endpoints',
-                'single'   => 'endpoint',
-            ],
-            [
-                'singular' => 'Enum',
-                'plural'   => 'Enums',
-                'archive'  => 'enums',
-                'rest'     => 'enums',
-                'single'   => 'enum',
-            ],
-            [
-                'singular' => 'Role',
-                'plural'   => 'Roles',
-                'archive'  => 'roles',
-                'rest'     => 'roles',
-                'single'   => 'role',
-            ],
-            [
-                'singular' => 'Role',
-                'plural'   => 'Roles',
-                'archive'  => 'roles',
-                'rest'     => 'roles',
-                'single'   => 'role',
-            ],
-            [
-                'singular' => 'Role',
-                'plural'   => 'Roles',
-                'archive'  => 'roles',
-                'rest'     => 'roles',
-                'single'   => 'role',
-            ],
-            [
-                'singular' => 'Badge',
-                'plural'   => 'Badges',
-                'archive'  => 'badges',
-                'rest'     => 'badges',
-                'single'   => 'badge',
-            ],
-            [
-                'singular' => 'Page',
-                'plural'   => 'Pages',
-                'archive'  => 'pages',
-                'rest'     => 'pages',
-                'single'   => 'page',
-            ],
-            [
-                'singular' => 'Plugin',
-                'plural'   => 'Plugins',
-                'archive'  => 'plugins',
-                'rest'     => 'plugins',
-                'single'   => 'plugin',
-            ],
-            [
-                'singular' => 'Work',
-                'plural'   => 'Work',
-                'archive'  => 'work',
-                'rest'     => 'work',
-                'single'   => 'work',
-            ],
-            [
-                'singular' => 'Post',
-                'plural'   => 'Posts',
-                'archive'  => 'posts',
-                'rest'     => 'posts',
-                'single'   => 'post',
-            ],
-            [
-                'singular' => 'Question',
-                'plural'   => 'Questions',
-                'archive'  => 'questions',
-                'rest'     => 'questions',
-                'single'   => 'question',
-            ],
-            [
-                'singular' => 'Space',
-                'plural'   => 'Spaces',
-                'archive'  => 'spaces',
-                'rest'     => 'spaces',
-                'single'   => 'space',
-            ],
-            [
-                'singular' => 'Team',
-                'plural'   => 'Teams',
-                'archive'  => 'teams',
-                'rest'     => 'teams',
-                'single'   => 'team',
-            ],
-            [
-                'singular' => 'Theme',
-                'plural'   => 'Themes',
-                'archive'  => 'themes',
-                'rest'     => 'themes',
-                'single'   => 'theme',
-            ],
-            [
-                'singular' => 'Zone',
-                'plural'   => 'Zones',
-                'archive'  => 'zones',
-                'rest'     => 'zones',
-                'single'   => 'zone',
-            ],
-            [
-                'singular' => 'Part',
-                'plural'   => 'Parts',
-                'archive'  => 'parts',
-                'rest'     => 'parts',
-                'single'   => 'part',
-            ],
-            [
-                'singular' => 'News',
-                'plural'   => 'News',
-                'archive'  => 'news',
-                'rest'     => 'news',
-                'single'   => 'news',
-            ],
-            [
-                'singular' => 'Group',
-                'plural'   => 'Groups',
-                'archive'  => 'groups',
-                'rest'     => 'groups',
-                'single'   => 'group',
-            ],
-            [
-                'singular' => 'Check',
-                'plural'   => 'Checks',
-                'archive'  => 'checks',
-                'rest'     => 'checks',
-                'single'   => 'check',
-            ],
-            [
-                'singular' => 'Term',
-                'plural'   => 'Terms',
-                'archive'  => 'terms',
-                'rest'     => 'terms',
-                'single'   => 'term',
-            ],
-            [
-                'singular' => 'Industry',
-                'plural'   => 'Industries',
-                'archive'  => 'industries',
-                'rest'     => 'industries',
-                'single'   => 'industry',
-            ],
-            [
-                'singular' => 'Fund',
-                'plural'   => 'Funds',
-                'archive'  => 'funds',
-                'rest'     => 'funds',
-                'single'   => 'fund',
-            ],
-            [
-                'singular' => 'Statement',
-                'plural'   => 'Statements',
-                'archive'  => 'statements',
-                'rest'     => 'statements',
-                'single'   => 'statement',
-            ],
-            [
-                'singular' => 'Block',
-                'plural'   => 'Blocks',
-                'archive'  => 'blocks',
-                'rest'     => 'blocks',
-                'single'   => 'block',
-            ],
-            [
-                'singular' => 'Link',
-                'plural'   => 'Links',
-                'archive'  => 'links',
-                'rest'     => 'links',
-                'single'   => 'link',
-            ],
-            [
-                'singular' => 'Wiki',
-                'plural'   => 'Wikis',
-                'archive'  => 'wikis',
-                'rest'     => 'wikis',
-                'single'   => 'wiki',
-            ],
-            [
-                'singular' => 'Tool',
-                'plural'   => 'Tools',
-                'archive'  => 'tools',
-                'rest'     => 'tools',
-                'single'   => 'tool',
-            ],
-            [
-                'singular' => 'Partner',
-                'plural'   => 'Partners',
-                'archive'  => 'partners',
-                'rest'     => 'partners',
-                'single'   => 'partner',
-            ],
-            [
-                'singular' => 'Guide',
-                'plural'   => 'Guides',
-                'archive'  => 'guides',
-                'rest'     => 'guides',
-                'single'   => 'guide',
-            ],
-            [
-                'singular' => 'Maker',
-                'plural'   => 'Makers',
-                'archive'  => 'makers',
-                'rest'     => 'makers',
-                'single'   => 'maker',
-            ],
-            [
-                'singular' => 'Model',
-                'plural'   => 'Models',
-                'archive'  => 'models',
-                'rest'     => 'models',
-                'single'   => 'model',
-            ],
-            [
-                'singular' => 'Profile',
-                'plural'   => 'Profiles',
-                'archive'  => 'profiles',
-                'rest'     => 'profiles',
-                'single'   => 'profile',
-            ],
-        ];
-        return $types;
     }
 }
 

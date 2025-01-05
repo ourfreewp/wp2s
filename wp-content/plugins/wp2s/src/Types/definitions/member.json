@@ -1,0 +1,8 @@
+{
+    "singular": "Member",
+    "plural": "Members",
+    "archive": "members",
+    "rest": "members",
+    "single": "member",
+    "type": "member"
+}

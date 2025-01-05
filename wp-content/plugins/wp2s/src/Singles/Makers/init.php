@@ -9,7 +9,7 @@ class Controller {
     private $archive    = 'makers';
     private $singular   = 'Maker';
     private $plural     = 'Makers';
-    private $icon       = 'dashicons-nametag';
+    private $icon       = 'dashicons-superhero';
 
     public function extend_post_type() {
         add_filter( 'register_post_type_args', [ $this, 'modify_post_type' ], 10, 2 );

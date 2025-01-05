@@ -20,9 +20,9 @@ class Controller {
             $args['publicly_queryable'] = false;
             $args['show_ui'] = true;
             $args['show_in_menu'] = false;
-            if (!in_array('editor', $args['supports'])) {
-                $args['supports'][] = 'editor';
-            }
+            $args['show_in_nav_menus'] = false;
+            $args['show_in_admin_bar'] = false;
+            $args['show_in_rest'] = false;
             $args['has_archive'] = $this->archive;
             $args['rewrite'] = [
                 'slug' => $this->slug,

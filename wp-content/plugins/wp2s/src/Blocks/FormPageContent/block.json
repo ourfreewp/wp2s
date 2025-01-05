@@ -1,0 +1,29 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/form-page-content",
+    "title": "Form Page Content",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "__experimental": true,
+    "ancestor": [ ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": true
+}

@@ -337,11 +337,11 @@
 			"fontSizes": [
 				{
 					"fluid": {
-						"max": "5rem",
-						"min": "3rem"
+						"max": "3.75rem",
+						"min": "2.5rem"
 					},
 					"name": "Site Title",
-					"size": "5rem",
+					"size": "3.75rem",
 					"slug": "site-title"
 				},
 				{

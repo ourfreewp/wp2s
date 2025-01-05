@@ -1,0 +1,7 @@
+{
+    "singular": "Event",
+    "plural": "Events",
+    "archive": "events",
+    "rest": "events",
+    "single": "event"
+}

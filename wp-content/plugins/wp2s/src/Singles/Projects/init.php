@@ -20,7 +20,7 @@ class Controller {
     public function modify_post_type( $args, $post_type ) {
         if ( $this->type === $post_type ) {
             $args['public'] = true;
-            $args['publicly_queryable'] = false;
+            $args['publicly_queryable'] = true;
             $args['show_ui'] = true;
             $args['show_in_menu'] = true;
             if ( ! in_array( 'editor', $args['supports'] ) ) {

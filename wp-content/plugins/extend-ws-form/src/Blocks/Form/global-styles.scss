@@ -1,0 +1,26 @@
+.wsf-invalid-feedback,
+[data-select-min-max],
+[data-checkbox-min-max] {
+    display: none;
+}
+
+.wsf-validated .wsf-field:invalid ~ .wsf-invalid-feedback,
+.wsf-validated .wsf-field.wsf-invalid ~ .wsf-invalid-feedback,
+.wsf-validated [role="radiogroup"][data-wsf-invalid] ~ .wsf-invalid-feedback,
+.wsf-validated [data-select-min-max]:invalid ~ .wsf-invalid-feedback,
+.wsf-validated [data-checkbox-min-max]:invalid ~ .wsf-invalid-feedback {
+    display: block;
+}
+
+.wsf-form .wsf-grid  {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.wsf-tile {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+}

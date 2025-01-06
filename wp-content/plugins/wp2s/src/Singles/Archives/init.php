@@ -6,8 +6,8 @@ class Controller
 {
     private $textdomain = 'wp2s';
     private $type       = 'wp2s_archive';
+    private $slug       = 'directory';
     private $archive    = 'explore';
-    private $slug       = ''; // Empty string to remove slug
     private $singular   = 'Directory';
     private $plural     = 'Directories';
     private $menu       = 'Directories';
@@ -16,6 +16,10 @@ class Controller
     public function __construct()
     {
         $this->extend_post_type();
+        $this->add_rewrite_rules();
+        $this->filter_permalink();
+        $this->hijack_request_for_archive();
+        $this->load_correct_template();
     }
 
     public function extend_post_type()
@@ -33,11 +37,8 @@ class Controller
             if (!in_array('editor', $args['supports'])) {
                 $args['supports'][] = 'editor';
             }
-            $args['has_archive'] = $this->archive;
-            $args['rewrite'] = [
-                'slug' => $this->slug,
-                'with_front' => false,
-            ];
+            $args['has_archive'] = 'explore';
+            $args['rewrite'] = false;
             $args['menu_icon'] = $this->icon;
             $args['labels'] = [
                 'name'               => $this->plural,
@@ -57,6 +58,65 @@ class Controller
             ];
         }
         return $args;
+    }
+
+    public function add_rewrite_rules()
+    {
+        add_action('init', function () {
+            add_action('init', function () {
+                add_rewrite_rule(
+                    '^explore/?$',
+                    'index.php?post_type=' . $this->type,
+                    'top'
+                );
+            });
+            add_rewrite_rule(
+                '^explore/page/([0-9]{1,})/?$',
+                'index.php?post_type=' . $this->type . '&paged=$matches[1]',
+                'top'
+            );
+            add_rewrite_rule(
+                '^(.+?)/?$',
+                'index.php?wp2s_archive=$matches[1]',
+                'top'
+            );
+        });
+    }
+
+    public function hijack_request_for_archive()
+    {
+        add_action('request', function ($query_vars) {
+            // If the request is /explore, override it to be the archive
+            if (isset($query_vars['pagename']) && $query_vars['pagename'] === $this->archive) {
+                $query_vars['post_type'] = $this->type;
+                $query_vars['wp2s_archive'] = true;
+                unset($query_vars['pagename']);
+            }
+            return $query_vars;
+        });
+    }
+
+    public function load_correct_template()
+    {
+        add_filter('template_include', function ($template) {
+            if (is_post_type_archive($this->type)) {
+                $override = locate_template('archive-' . $this->type . '.php');
+                if ($override) {
+                    return $override;
+                }
+            }
+            return $template;
+        });
+    }
+
+    public function filter_permalink()
+    {
+        add_filter('post_type_link', function ($post_link, $post) {
+            if ($post->post_type === $this->type) {
+                return home_url('/' . $post->post_name . '/');
+            }
+            return $post_link;
+        }, 10, 2);
     }
 
     public function get_archive_page($fallback = 'explore')

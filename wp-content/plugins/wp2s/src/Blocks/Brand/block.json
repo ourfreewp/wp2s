@@ -1,0 +1,80 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/brand",
+    "title": "Brand",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "identity",
+                "type": "select",
+                "label": "Identity",
+                "default": "site",
+                "options": [
+                    {
+                        "value": "Site",
+                        "label": "Site"
+                    },
+                    {
+                        "value": "Parent",
+                        "label": "Parent"
+                    }
+                ]
+            },
+            {
+                "id": "kind",
+                "type": "select",
+                "label": "Kind",
+                "default": "Logo",
+                "options": [
+                    {
+                        "value": "Logo",
+                        "label": "Logo"
+                    },
+                    {
+                        "value": "ShortLogo",
+                        "label": "Short Logo"
+                    },
+                    {
+                        "value": "Icon",
+                        "label": "Icon"
+                    }
+                ]
+            },
+            {
+                "id": "theme",
+                "type": "select",
+                "label": "Theme",
+                "default": "light",
+                "options": [
+                    {
+                        "value": "light",
+                        "label": "Light"
+                    },
+                    {
+                        "value": "dark",
+                        "label": "Dark"
+                    }
+                ]
+            },
+            {
+                "id": "type",
+                "type": "select",
+                "label": "Type",
+                "default": "svg",
+                "options": [
+                    {
+                        "value": "svg",
+                        "label": "SVG"
+                    }
+                ]
+            }
+        ]
+    }
+}

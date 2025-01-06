@@ -6,7 +6,7 @@ class Controller {
     private $textdomain = 'wp2s';
     private $type       = 'wp2s_token';
     private $slug       = 'token';
-    private $archive    = 'tokens';
+    private $archive    = false;
     private $singular   = 'Token';
     private $plural     = 'Tokens';
     private $icon       = 'dashicons-vault';

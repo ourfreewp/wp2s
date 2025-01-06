@@ -1,0 +1,29 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/image-mask",
+    "title": "Masked Image",
+    "category": "media",
+    "icon": "format-image",
+    "description": "",
+    "allowedBlocks": [
+        "core/image"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "option",
+                "type": "select",
+                "label": "Option",
+                "default": 1,
+                "fallback": 1,
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One"
+                    }
+                ],
+                "allowNull": "Select Option"
+            }
+        ]
+    }
+}

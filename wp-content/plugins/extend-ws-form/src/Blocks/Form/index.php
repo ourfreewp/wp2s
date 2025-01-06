@@ -18,7 +18,7 @@ do_action( 'qm/debug', 'forms: ' . print_r($a, true) );
 $form_element_arg = $element_id ? ' element_id="' . esc_attr($element_id) . '"' : '';
 
 ?>
-<div useBlockProps>
+<div useBlockProps class="wp2-form">
 
 	<?php echo do_shortcode(sprintf('[ws_form id="%s"%s]', esc_attr($form_id), $form_element_arg)); ?>
 

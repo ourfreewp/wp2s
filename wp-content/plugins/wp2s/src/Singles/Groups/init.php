@@ -9,6 +9,10 @@ class Controller
     private $type       = 'wp2s_group';
     private $archives   = 'groups';
     private $slug       = 'group';
+    private $singular   = 'Group';
+    private $plural     = 'Groups';
+    private $menu       = 'Groups';
+    private $icon       = 'dashicons-groups';
 
     public function extend_post_type()
     {
@@ -22,7 +26,6 @@ class Controller
             $args['publicly_queryable'] = true;
             $args['show_ui'] = true;
             $args['show_in_menu'] = true;
-            $args['has_archive'] = false;
             if (! in_array('editor', $args['supports'])) {
                 $args['supports'][] = 'editor';
             }
@@ -31,6 +34,24 @@ class Controller
                 'slug' => $this->slug,
                 'with_front' => false,
             ];
+            $args['menu_icon'] = $this->icon;
+            $args['labels'] = [
+                'name'               => $this->plural,
+                'singular_name'      => $this->singular,
+                'menu_name'          => $this->menu,
+                'name_admin_bar'     => $this->singular,
+                'add_new'            => 'Add New',
+                'add_new_item'       => 'Add New ' . $this->singular,
+                'new_item'           => 'New ' . $this->singular,
+                'edit_item'          => 'Edit ' . $this->singular,
+                'view_item'          => 'View ' . $this->singular,
+                'all_items'          => 'All ' . $this->plural,
+                'search_items'       => 'Search ' . $this->plural,
+                'parent_item_colon'  => 'Parent ' . $this->plural . ':',
+                'not_found'          => 'No ' . strtolower($this->plural) . ' found.',
+                'not_found_in_trash' => 'No ' . strtolower($this->plural) . ' found in Trash.',
+            ];
+
         }
         return $args;
     }

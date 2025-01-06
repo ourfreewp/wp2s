@@ -16,6 +16,44 @@
 			"defaultDuotone": false,
 			"defaultGradients": false,
 			"defaultPalette": false,
+			"duotone": [
+				{
+					"colors": [
+						"#FE0000",
+						"#01FFFF",
+						"#00FF01"
+					],
+					"name": "Electric Blaze",
+					"slug": "blue-cyan-red"
+				},
+				{
+					"colors": [
+						"#FE0000",
+						"#FFFF01",
+						"#FF00FE"
+					],
+					"name": "Solar Flare",
+					"slug": "red-yellow-magenta"
+				},
+				{
+					"colors": [
+						"#FF00FE",
+						"#00FF01",
+						"#01FFFF"
+					],
+					"name": "Neon Horizon",
+					"slug": "magenta-yellow-cyan"
+				},
+				{
+					"colors": [
+						"#0000FE",
+						"#01FFFF",
+						"#FFFF01"
+					],
+					"name": "Solar Breeze",
+					"slug": "blue-aqua-yellow"
+				}
+			],
 			"palette": [
 				{
 					"color": "#000000",
@@ -56,6 +94,11 @@
 					"color": "#ffff01",
 					"name": "Accent 4",
 					"slug": "accent-4"
+				},
+				{
+					"color": "#02ACF2",
+					"name": "Accent 5",
+					"slug": "accent-5"
 				},
 				{
 					"color": "#03070e",
@@ -106,6 +149,11 @@
 					"color": "#03070e",
 					"name": "Text",
 					"slug": "content"
+				},
+				{
+					"color": "#E5E5E5",
+					"name": "Muted",
+					"slug": "muted"
 				}
 			],
 			"text": true
@@ -346,11 +394,11 @@
 				},
 				{
 					"fluid": {
-						"max": "2rem",
-						"min": "1.5rem"
+						"max": "1.2rem",
+						"min": "1.1rem"
 					},
 					"name": "Site Tagline",
-					"size": "1.75rem",
+					"size": "1.2rem",
 					"slug": "site-tagline"
 				},
 				{

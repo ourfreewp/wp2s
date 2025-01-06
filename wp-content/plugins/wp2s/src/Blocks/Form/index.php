@@ -5,6 +5,4 @@ namespace WPS2\Blocks\Form;
 
 ?>
 
-<div useBlockProps class="wp2s-form">
-    <InnerBlocks/>
-</div>
+<InnerBlocks useBlockProps class="wp2s-form"/>

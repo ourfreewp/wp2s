@@ -5,8 +5,6 @@
     "category": "text",
     "icon": "star-filled",
     "description": "",
-    "__experimental": true,
-    "ancestor": [ ],
     "supports": {
         "className": false,
         "customClassName": true,
@@ -31,6 +29,7 @@
                 "id": "layout",
                 "type": "select",
                 "label": "Layout",
+                "allowNull": "Select Layout",
                 "options": [
                     {
                         "value": "1",

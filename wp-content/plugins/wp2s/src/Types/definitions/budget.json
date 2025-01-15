@@ -1,0 +1,8 @@
+{
+    "singular": "Budget",
+    "plural": "Budgets",
+    "archive": "budgets",
+    "rest": "budgets",
+    "single": "budget",
+    "type": "budget"
+}

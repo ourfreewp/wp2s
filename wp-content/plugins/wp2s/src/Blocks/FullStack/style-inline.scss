@@ -1,0 +1,60 @@
+.wp2s-fullstack {
+    .wp2s-fullstack__section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        border: 1px solid var(--wp--preset--color--separator);
+        background: var(--wp--preset--color--bg);
+    }
+
+    .wp2s-stack__header {
+        border-bottom: 1px solid var(--wp--preset--color--separator);
+    }
+
+    .wp2s-stack__header-inner {
+        padding: 0.5rem 1rem;
+    }
+
+    .wp2s-stack__title {
+        font-family: var(--wp--preset--font-family--jetbrains-mono);
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .wp2s-stack__count {
+        margin: 0;
+    }
+
+    .wp2s-stack__description {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .wp2s-stack__content-inner {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .5rem;
+        padding: 1rem;
+    }
+
+    .wp2s-stack-item {
+        width: 100%;
+
+        .wp2s-name {
+            font-size: 1rem;
+        }
+
+        .wp2s-description {
+            font-size: 0.8rem;
+        }
+
+    }
+
+    .wp2s-stack {
+        width: 100%;
+    }
+}

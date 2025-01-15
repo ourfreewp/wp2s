@@ -1,0 +1,44 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/platforms",
+    "title": "Platforms",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "selected_module",
+                "type": "select",
+                "allowNull": "Select Module",
+                "label": "Module",
+                "populate": {
+                    "type": "query",
+                    "query": "terms",
+                    "fetch": true,
+                    "arguments": {
+                        "taxonomy": "wp2s_tax_module",
+                        "hide_empty": true,
+                        "number": 20
+                    },
+                    "returnFormat": {
+                        "value": "id",
+                        "label": "name"
+                    }
+                }
+            }
+        ]
+    }
+}

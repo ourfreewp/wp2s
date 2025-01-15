@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-photos",
-    "title": "WP2 Photos",
+    "title": "Photos",
     "category": "module",
     "icon": "star-filled",
     "description": "",

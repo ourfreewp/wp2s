@@ -1,0 +1,8 @@
+{
+    "singular": "Server",
+    "plural": "Servers",
+    "archive": "servers",
+    "rest": "servers",
+    "single": "server",
+    "type": "server"
+}

@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-ai",
-    "title": "WP2 AI",
+    "title": "AI",
     "category": "module",
     "icon": "star-filled",
     "description": "",

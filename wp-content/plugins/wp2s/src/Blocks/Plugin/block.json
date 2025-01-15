@@ -1,0 +1,62 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/plugin",
+    "title": "Plugin",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "ancestor": [
+        "core/post-template",
+        "wp2s/plugin-type"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "inherit",
+                "type": "toggle",
+                "label": "Inherit",
+                "default": true,
+                "fallback": true
+            },
+            {
+                "id": "plugin",
+                "type": "select",
+                "label": "Plugin",
+                "stylisedUi": true,
+                "populate": {
+                    "fetch": true,
+                    "type": "query",
+                    "query": "posts",
+                    "arguments": {
+                        "post_type": "wp2s_plugin",
+                        "posts_per_page": 10,
+                        "post_status": [
+                            "plugin_awaiting_docs",
+                            "publish"
+                        ]
+                    }
+                },
+                "allowNull": "Select Plugin",
+                "conditions": [
+                    [
+                        {
+                            "id": "inherit",
+                            "type": "toggle",
+                            "operator": "==",
+                            "value": false
+                        }
+                    ]
+                ]
+            }
+        ]
+    }
+}

@@ -7,8 +7,8 @@ class Controller {
 
     private $textdomain = 'wp2s';
     private $type       = 'wp2s_issue';
-    private $slug       = 'work';
-    private $archive    = 'work';
+    private $slug       = 'issue';
+    private $archive    = 'issues';
     private $singular   = 'Issue';
     private $plural     = 'Issues';
     private $menu       = 'Issues';
@@ -21,7 +21,7 @@ class Controller {
     public function modify_post_type( $args, $post_type ) {
         if ( $this->type === $post_type ) {
             $args['public'] = true;
-            $args['publicly_queryable'] = true;
+            $args['publicly_queryable'] = false;
             $args['show_ui'] = true;
             $args['show_in_menu'] = true;
             if ( ! in_array( 'editor', $args['supports'] ) ) {

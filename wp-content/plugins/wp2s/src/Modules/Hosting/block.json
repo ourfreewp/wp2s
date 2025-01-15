@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-hosting",
-    "title": "WP2 Hosting",
+    "title": "Hosting",
     "category": "module",
     "icon": "star-filled",
     "description": "",

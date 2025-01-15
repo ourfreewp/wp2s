@@ -1,0 +1,8 @@
+{
+    "singular": "Dashboard",
+    "plural": "Dashboards",
+    "archive": "dashboards",
+    "rest": "dashboards",
+    "single": "dashboard",
+    "type": "dashboard"
+}

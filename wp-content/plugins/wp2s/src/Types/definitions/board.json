@@ -1,0 +1,8 @@
+{
+    "singular": "Board",
+    "plural": "Boards",
+    "archive": "boards",
+    "rest": "boards",
+    "single": "board",
+    "type": "board"
+}

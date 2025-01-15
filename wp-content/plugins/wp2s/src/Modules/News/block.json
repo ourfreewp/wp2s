@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-news",
-    "title": "WP2 News",
+    "title": "News",
     "category": "module",
     "icon": "star-filled",
     "description": "",

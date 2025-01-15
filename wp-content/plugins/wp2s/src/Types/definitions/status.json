@@ -1,0 +1,8 @@
+{
+    "singular": "Status",
+    "plural": "Statuses",
+    "archive": "statuses",
+    "rest": "statuses",
+    "single": "status",
+    "type": "status"
+}

@@ -1,0 +1,32 @@
+.wp-block-safe-svg-svg-icon {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &.safe-svg-cover {
+
+    }
+
+    .safe-svg-inside {
+
+        &.safe-svg-inline {
+
+        }
+
+        > svg {
+
+            path {
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/form-manifest",
+    "title": "Form",
+    "icon": "embed-generic",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "id": "description",
+                "type": "textarea",
+                "label": "Description"
+            },
+            {
+                "id": "id",
+                "type": "text",
+                "label": "Id"
+            },
+            {
+                "id": "slug",
+                "type": "text",
+                "label": "Slug"
+            },
+            {
+                "id": "type",
+                "type": "text",
+                "label": "Type"
+            }
+        ]
+    },
+    "category": "Directory",
+    "ancestor": [
+        "wp2s/manifests"
+    ]
+}

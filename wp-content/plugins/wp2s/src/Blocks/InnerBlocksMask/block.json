@@ -1,0 +1,65 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/masked-blocks",
+    "title": "Mask",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "mask",
+                "type": "select",
+                "label": "Mask",
+                "default": 1,
+                "fallback": 1,
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One - Grid Style 1",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "customClassName": "wp2s-mask-1"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "value": "2",
+                        "label": "Two - Vector Corners",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "customClassName": "wp2s-mask-2"
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "allowNull": "Select Mask"
+            }
+        ]
+    }
+}

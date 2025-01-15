@@ -6,7 +6,7 @@ class Controller {
 
     private $textdomain = 'wp2s';
     private $type       = 'wp2s_guide';
-    private $archives   = 'guides';
+    private $archives   = 'learn';
     private $slug       = 'guide';
     private $singular   = 'Guide';
     private $plural     = 'Guides';

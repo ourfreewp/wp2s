@@ -1,0 +1,8 @@
+{
+    "singular": "Video",
+    "plural": "Videos",
+    "archive": "videos",
+    "rest": "videos",
+    "single": "video",
+    "type": "video"
+}

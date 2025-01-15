@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-zone",
-    "title": "WP2 Zone",
+    "title": "Zone",
     "category": "module",
     "icon": "star-filled",
     "description": "",

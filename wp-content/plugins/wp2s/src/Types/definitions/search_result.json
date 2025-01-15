@@ -1,0 +1,8 @@
+{
+    "singular": "Search Result",
+    "plural": "Search Results",
+    "archive": "search-results",
+    "rest": "search-results",
+    "single": "search-result",
+    "type": "search-result"
+}

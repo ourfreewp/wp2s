@@ -1,0 +1,8 @@
+{
+    "singular": "SKU",
+    "plural": "SKUs",
+    "archive": "skus",
+    "rest": "skus",
+    "single": "sku",
+    "type": "sku"
+}

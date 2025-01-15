@@ -1,0 +1,27 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/stretched-link",
+    "title": "Stretched Link",
+    "category": "text",
+    "icon": "star-filled",
+    "parent": [
+        "core/card"
+    ],
+    "description": "",
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "link",
+                "type": "link",
+                "label": "Link",
+                "hasRichPreviews": true,
+                "opensInNewTab": true,
+                "showSuggestions": true,
+                "noDirectEntry": false,
+                "textButton": "Select Link",
+                "noURLSuggestion": false,
+                "withCreateSuggestion": true
+            }
+        ]
+    }
+}

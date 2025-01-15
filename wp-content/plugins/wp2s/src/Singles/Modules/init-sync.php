@@ -1,134 +1,135 @@
 <?php
-// Path: wp-content/plugins/wp2s/Modules/init-sync.php
+// Path: wp-content/plugins/wp2s/src/Singles/Modules/init-sync.php
 
 namespace WP2S\Modules\Sync;
 
-use RecursiveDirectoryIterator;
-use RecursiveIteratorIterator;
-use RegexIterator;
+use WP2S\Helpers\Syncs\Blocks\JSON\Controller as BlockJSONController;
+use WP2S\Helpers\Syncs\Blocks\PostTwins\Controller as TwinsController;
 
 class Controller
 {
-    private $modules = [];
+    private $text_domain = 'wp2s';
+    private $dir = WP2S_PLUGIN_DIR . 'src/Modules/';
     private $post_type = 'wp2s_module';
-    private $option_key = 'wp2s_modules';
+    private $dir_identifier = 'modules';
+    private $manifests_controller;
 
     public function __construct()
     {
+        $this->manifests_controller = new BlockJSONController();
+
         add_action('load-edit.php', [$this, 'conditional_sync'], 999);
-        add_action('init', [$this, 'load_modules'], 999);
-        // add_action('init', [$this, 'debug_modules'], 999);
+        add_action('init', [$this, 'load_items'], 999);
     }
 
+    /**
+     * Sync blocks and ensure posts exist when on the item list screen.
+     */
     public function conditional_sync()
     {
-        if ($this->is_wp2s_module_list_screen()) {
-            $this->sync_blocks();
-            $this->ensure_posts_exist();
+        if ($this->is_list_screen()) {
+            $this->sync_blocks_and_posts();
         }
     }
 
+    /**
+     * Sync blocks and ensure posts exist.
+     */
+    private function sync_blocks_and_posts()
+    {
+        // Sync blocks.
+        $this->sync_blocks();
+
+        // Retrieve synced blocks.
+        $items = $this->get_synced_blocks();
+
+        // Ensure posts exist for synced blocks.
+        $this->ensure_posts_exist($items);
+    }
+
+    /**
+     * Sync blocks for the specified directory.
+     */
     private function sync_blocks()
     {
-        $blocks = [];
-        $parent_dir = WP2S_PLUGIN_DIR . 'Modules/';
+        $this->manifests_controller->sync_blocks($this->dir, $this->dir_identifier);
+    }
 
-        $iterator = new RecursiveIteratorIterator(
-            new RecursiveDirectoryIterator($parent_dir, RecursiveDirectoryIterator::SKIP_DOTS)
+    /**
+     * Retrieve synced blocks.
+     *
+     * @return array
+     */
+    private function get_synced_blocks(): array
+    {
+        return $this->manifests_controller->get_blocks($this->dir_identifier);
+    }
+
+
+    /**
+     * Ensure posts exist for the given items.
+     *
+     * @param array $items The items to process.
+     */
+    private function ensure_posts_exist(array $items)
+    {
+        TwinsController::check_twin(
+            $items,
+            $this->post_type,
+            // Title callback.
+            function ($block_name, $block_data) {
+                $block_name = str_replace($this->text_domain . '/', '', $block_name);
+                return $block_data['title'] ?? ucwords($block_name);
+            },
+            // Meta callback.
+            function ($block_name, $block_data) {
+                return [
+                    $this->post_type . '_name' => $block_name,
+                    $this->post_type . '_data' => $block_data,
+                ];
+            },
+            // Name callback.
+            function ($block_name, $block_data) {
+                // Normalize the block name to lowercase.
+                $name = strtolower($block_name);
+
+                // Remove the 'wp2s-' prefix.
+                $name = str_replace($this->text_domain . '/', '', $name);
+                // Return sanitized name.
+                return sanitize_title($name);
+            },
+            // Default status.
+            'draft'
         );
-
-        $files = new RegexIterator($iterator, '/block\.json$/', RegexIterator::MATCH);
-
-        foreach ($files as $file) {
-            $block_data = json_decode(file_get_contents($file->getPathname()), true);
-            if (isset($block_data['name'])) {
-                $blocks[$block_data['name']] = $block_data;
-            }
-        }
-
-        update_option($this->option_key, $blocks);
     }
 
-    public function load_modules()
+    /**
+     * Load synced items into the local property.
+     */
+    public function load_items()
     {
-        $this->modules = get_option($this->option_key, []);
+        $this->items = $this->get_synced_blocks();
     }
 
-    private function ensure_posts_exist()
+    /**
+     * Check if the current screen is the item list screen.
+     *
+     * @return bool
+     */
+    private function is_list_screen(): bool
     {
-        foreach ($this->modules as $block_name => $block_data) {
-
-            $block_name = str_replace('wp2s/wp2-', '', strtolower($block_name));
-
-            $query = new \WP_Query([
-                'post_type'   => $this->post_type,
-                'name'        => $block_name,
-                'post_status' => 'any',
-                'fields'      => 'ids',
-            ]);
-    
-            if (empty($query->posts)) {
-                $post_id = wp_insert_post([
-                    'post_name'    => $block_name,
-                    'post_title'   => ucwords($block_name),
-                    'post_status'  => 'draft',
-                    'post_type'    => $this->post_type,
-                    'meta_input'   => [
-                        'wp2_module_name' => $block_name,
-                        'wp2_module_data' => $block_data,
-                    ],
-                ]);
-            } else {
-                $post_id = wp_update_post([
-                    'ID'           => $query->posts[0],
-                    'meta_input'   => [
-                        'wp2_module_name' => $block_name,
-                        'wp2_module_data' => $block_data,
-                    ],
-                ]);
-            }
-        }
+        $post_type = filter_input(INPUT_GET, 'post_type', FILTER_SANITIZE_STRING);
+        return $post_type === $this->post_type;
     }
 
-    public function debug_modules()
+    /**
+     * Get all loaded items.
+     *
+     * @return array
+     */
+    public function get_items(): array
     {
-        if (function_exists('do_action')) {
-            do_action('qm/debug', 'Modules: Initialized');
-            do_action('qm/debug', 'Modules: ' . print_r($this->modules, true));
-        }
-    }
-
-    // Helper to detect wp2s_module list screen
-    private function is_wp2s_module_list_screen()
-    {
-        if (isset($_GET['post_type']) && $_GET['post_type'] === $this->post_type) {
-            return true;
-        }
-        return false;
-    }
-
-    public function get_module_data($block_name, $key)
-    {
-        if (!isset($this->modules[$block_name])) {
-            return null;
-        }
-
-        $data = $this->modules[$block_name];
-        $keys = explode('.', $key);
-
-        foreach ($keys as $key) {
-            if (!isset($data[$key])) {
-                return null;
-            }
-            $data = $data[$key];
-        }
-
-        return $data;
-    }
-
-    public function get_modules()
-    {
-        return $this->modules;
+        return $this->items ?? [];
     }
 }
 

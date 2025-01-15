@@ -421,11 +421,11 @@
 				},
 				{
 					"fluid": {
-						"max": "2.5rem",
-						"min": "1.75rem"
+						"max": "1.6343234643rem",
+						"min": "1.6343234643rem"
 					},
 					"name": "Heading 3",
-					"size": "2rem",
+					"size": "1.6343234643rem",
 					"slug": "heading-3"
 				},
 				{
@@ -616,6 +616,33 @@
 					"name": "Nav Link",
 					"size": "0.875rem",
 					"slug": "nav-link"
+				},
+				{
+					"fluid": {
+						"max": "1.15253784323464rem",
+						"min": "1.15253784323464rem"
+					},
+					"name": "Alert Heading",
+					"size": "1.15253784323464rem",
+					"slug": "alert-heading"
+				},
+				{
+					"fluid": {
+						"max": "1.0253788398rem",
+						"min": "1.0253788398rem"
+					},
+					"name": "Alert Text",
+					"size": "1.053788398rem",
+					"slug": "alert-text"
+				},
+				{
+					"fluid": {
+						"max": "0.90253786382rem",
+						"min": "0.90253786382rem"
+					},
+					"name": "Alert Meta",
+					"size": "0.90253786382rem",
+					"slug": "alert-meta"
 				}
 			],
 			"fontStyle": true,

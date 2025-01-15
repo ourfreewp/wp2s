@@ -1,0 +1,94 @@
+.wp2s-mask-1 {
+    position: relative;
+    /* Ensure positioning context for pseudo-element */
+    z-index: 0;
+
+    /* Keep content above the background */
+    >* {
+        position: relative;
+        /* Ensure stacking context for child elements */
+        z-index: 1;
+        /* Keep content above the background */
+    }
+}
+
+.wp2s-mask-1::before {
+    content: "";
+    position: absolute;
+    top: -1rem;
+    /* Expand above */
+    left: 0rem;
+    /* Expand left */
+    right: 0rem;
+    /* Expand right */
+    bottom: -1rem;
+    /* Expand below */
+    background-image:
+        linear-gradient(var(--wp--preset--color--accent-1) .5px, var(--wp--preset--color--accent-1) .5px, transparent .5px),
+        linear-gradient(90deg, var(--wp--preset--color--accent-1) .5px, transparent .5px);
+    background-size: 1rem 1rem;
+    background-position: -1rem -1rem;
+    z-index: -1;
+    /* Push background below content */
+    rotate: -0.1deg;
+}
+
+.wp2s-mask-overlay {
+    position: absolute;
+    --wp2s-mask-vector-size: 27px;
+}
+
+.wp2s-mask-overlay.top-left {
+    top: calc(-1 * var(--wp2s-mask-vector-size));
+    left: calc(-1 * var(--wp2s-mask-vector-size));
+}
+
+.wp2s-mask-overlay.top-right {
+    top: calc(-1 * var(--wp2s-mask-vector-size));
+    right: calc(-1 * var(--wp2s-mask-vector-size));
+}
+
+.wp2s-mask-overlay.bottom-left {
+    bottom: calc(-1 * var(--wp2s-mask-vector-size));
+    left: calc(-1 * var(--wp2s-mask-vector-size));
+}
+
+.wp2s-mask-overlay.bottom-right {
+    bottom: calc(-1 * var(--wp2s-mask-vector-size));
+    right: calc(-1 * var(--wp2s-mask-vector-size));
+}
+
+.wp2s-masked-blocks {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.wp2s-vector--0 {
+    rotate: 0deg;
+}
+
+.wp2s-vector--45 {
+    rotate: 45deg;
+}
+
+.wp2s-vector--90 {
+    rotate: 90deg;
+}
+
+.wp2s-vector--135 {
+    rotate: 135deg;
+}
+
+.wp2s-vector--180 {
+    rotate: 180deg;
+}
+
+.wp2s-vector--225 {
+    rotate: 225deg;
+}
+
+.wp2s-vector--270 {
+    rotate: 270deg;
+}

@@ -1,0 +1,8 @@
+{
+    "singular": "Metric",
+    "plural": "Metrics",
+    "archive": "metrics",
+    "rest": "metrics",
+    "single": "metric",
+    "type": "metric"
+}

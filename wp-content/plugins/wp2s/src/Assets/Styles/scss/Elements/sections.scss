@@ -1,0 +1,20 @@
+.wp2s-section {
+    width: 100%;
+    max-width: var(--wp--style--global--content-size);
+    margin: 0 auto;
+    padding-right: var(--wp--style--root--padding-right);
+    padding-left: var(--wp--style--root--padding-left);
+    gap: var(--wp--preset--spacing--80);
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &.wp2s-section--wide {
+        max-width: var(--wp--style--global--wide-size);
+    }
+
+    &.wp2s-section--full {
+        max-width: 100%;
+    }
+}
+

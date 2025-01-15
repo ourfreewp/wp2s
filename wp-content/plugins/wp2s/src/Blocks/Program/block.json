@@ -1,0 +1,58 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/program",
+    "title": "Program",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "ancestor": [
+        "core/post-template",
+        "wp2s/program-group"
+    ],
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "inherit",
+                "type": "toggle",
+                "label": "Inherit",
+                "default": true,
+                "fallback": true
+            },
+            {
+                "id": "program",
+                "type": "select",
+                "label": "Program",
+                "stylisedUi": true,
+                "populate": {
+                    "fetch": true,
+                    "type": "query",
+                    "query": "posts",
+                    "arguments": {
+                        "post_type": "wp2s_program",
+                        "posts_per_page": -1
+                    }
+                },
+                "allowNull": "Select Program",
+                "conditions": [
+                    [
+                        {
+                            "id": "inherit",
+                            "type": "toggle",
+                            "operator": "==",
+                            "value": false
+                        }
+                    ]
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "singular": "Service",
+    "plural": "Services",
+    "archive": "services",
+    "rest": "services",
+    "single": "service",
+    "type": "service"
+}

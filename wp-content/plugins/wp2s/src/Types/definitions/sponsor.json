@@ -1,0 +1,8 @@
+{
+    "singular": "Sponsor",
+    "plural": "Sponsors",
+    "archive": "sponsors",
+    "rest": "sponsors",
+    "single": "sponsor",
+    "type": "sponsor"
+}

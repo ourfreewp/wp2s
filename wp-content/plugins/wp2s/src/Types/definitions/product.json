@@ -1,7 +1,8 @@
 {
     "singular": "Product",
-    "plural": "Products",
+    "plural": "Product",
     "archive": "products",
     "rest": "products",
-    "single": "product"
+    "single": "product",
+    "type": "product"
 }

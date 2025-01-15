@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-esq",
-    "title": "WP2 Esq",
+    "title": "Esq",
     "category": "module",
     "icon": "star-filled",
     "description": "",

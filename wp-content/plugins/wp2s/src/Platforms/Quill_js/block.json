@@ -1,0 +1,22 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/quill-js-platform",
+    "title": "Quill.js",
+    "category": "dev",
+    "icon": "editor-code",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": true
+}

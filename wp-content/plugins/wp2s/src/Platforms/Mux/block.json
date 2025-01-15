@@ -1,0 +1,22 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/mux-platform",
+    "title": "Mux",
+    "category": "media",
+    "icon": "format-video",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": true
+}

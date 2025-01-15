@@ -1,0 +1,50 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/manifest",
+    "title": "Single Manifest",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "id",
+                "type": "text",
+                "label": "Id"
+            },
+            {
+                "id": "name",
+                "type": "text",
+                "label": "Name"
+            },
+            {
+                "id": "identifier",
+                "type": "text",
+                "label": "Identifier"
+            },
+            {
+                "id": "description",
+                "type": "text",
+                "label": "Description"
+            },
+            {
+                "id": "type",
+                "type": "text",
+                "label": "Type"
+            }
+        ]
+    }
+}

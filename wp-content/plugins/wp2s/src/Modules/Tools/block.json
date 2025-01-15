@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-tools",
-    "title": "WP2 Tools",
+    "title": "Tools",
     "category": "module",
     "icon": "star-filled",
     "description": "",

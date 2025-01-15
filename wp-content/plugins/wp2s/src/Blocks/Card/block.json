@@ -1,0 +1,95 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/card",
+    "title": "Card",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "parent": [
+        "core/group"
+    ],
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "type": "text",
+                "id": "call_to_action",
+                "label": "Call to Action",
+                "default": "Read More",
+                "fallback": "Read More",
+                "min": 2,
+                "max": 48
+            },
+            {
+                "id": "layout",
+                "type": "select",
+                "label": "Layout",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "One - Page"
+                    }
+                ],
+                "allowNull": "Select Layout"
+            },
+            {
+                "id": "object_type",
+                "type": "select",
+                "label": "Type",
+                "options": [
+                    {
+                        "value": "post",
+                        "label": "Post"
+                    }
+                ],
+                "allowNull": "Select Type"
+            },
+            {
+                "id": "object",
+                "type": "select",
+                "label": "Object",
+                "options": [
+                    {
+                        "value": "page",
+                        "label": "Page"
+                    }
+                ],
+                "allowNull": "Select Object"
+            },
+            {
+                "id": "page",
+                "type": "select",
+                "label": "Pages",
+                "populate": {
+                    "fetch": true,
+                    "type": "query",
+                    "query": "posts",
+                    "arguments": {
+                        "post_type": "page",
+                        "posts_per_page": 10,
+                        "post_status": "publish"
+                    }
+                },
+                "allowNull": "Select Page"
+            }
+        ]
+    }
+}

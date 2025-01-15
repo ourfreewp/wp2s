@@ -1,0 +1,8 @@
+{
+    "singular": "Inbox",
+    "plural": "Inboxes",
+    "archive": "inboxes",
+    "rest": "inboxes",
+    "single": "inbox",
+    "type": "inbox"
+}

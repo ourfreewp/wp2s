@@ -1,0 +1,8 @@
+{
+    "singular": "Site",
+    "plural": "Sites",
+    "archive": "sites",
+    "rest": "sites",
+    "single": "site",
+    "type": "site"
+}

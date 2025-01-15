@@ -1,0 +1,22 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/have-i-been-pwned-platform",
+    "title": "Have I Been Pwned",
+    "category": "security",
+    "icon": "lock",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": true
+}

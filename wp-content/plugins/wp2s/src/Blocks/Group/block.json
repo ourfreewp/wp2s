@@ -1,0 +1,36 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/group",
+    "title": "Group",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "id": "classes",
+                "type": "classes",
+                "label": "Classes"
+              }
+        ]
+    }
+}

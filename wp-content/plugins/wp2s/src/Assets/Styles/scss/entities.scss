@@ -1,0 +1,42 @@
+.wp2s-name {
+    font-size: var(--wp--preset--font-size--heading-3);
+    font-family: var(--wp--preset--font-family--armino);
+    line-height: 1.5;
+    text-transform: none;
+    font-weight: bold;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.wp2s-description {
+    font-size: var(--wp--preset--font-size--paragraph);
+    font-family: var(--wp--preset--font-family--jetbrains-mono);
+    line-height: 1.22;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.wp2s-about p {
+    &:first-of-type {
+        margin-top: 0;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.wp2s-about p,
+.wp2s-action {
+    font-family: var(--wp--preset--font-family--jetbrains-mono);
+    text-transform: uppercase;
+    font-size: 16px;
+    line-height: 1.22;
+}
+
+.wp2s-action {
+    text-decoration: underline;
+    text-decoration-style: double;
+    text-underline-offset: 5px;
+}

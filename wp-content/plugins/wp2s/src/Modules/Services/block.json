@@ -1,0 +1,22 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/wp2-services",
+    "title": "Services",
+    "category": "module",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": true
+}

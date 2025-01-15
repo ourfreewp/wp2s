@@ -13,6 +13,7 @@ class Controller
     private $menu       = 'Directories';
     private $icon       = 'dashicons-book-alt';
 
+
     public function __construct()
     {
         $this->extend_post_type();
@@ -26,6 +27,7 @@ class Controller
     {
         add_filter('register_post_type_args', [$this, 'modify_post_type'], 10, 2);
     }
+
 
     public function modify_post_type($args, $post_type)
     {
@@ -119,6 +121,35 @@ class Controller
         }, 10, 2);
     }
 
+    public function get_template_type()
+    {
+        if (is_post_type_archive()) {
+            return 'post';
+        } elseif (is_tax()) {
+            return 'taxonomy';
+        } elseif (is_author()) {
+            return 'author';
+        } elseif (is_date()) {
+            return 'date';
+        } elseif (is_search()) {
+            return 'search';
+        } elseif (is_home()) {
+            return 'home';
+        } elseif (is_front_page()) {
+            return 'front_page';
+        } elseif (is_page()) {
+            return 'page';
+        } elseif (is_single()) {
+            return 'single';
+        } elseif (is_attachment()) {
+            return 'attachment';
+        } elseif (is_404()) {
+            return '404';
+        } else {
+            return 'undefined';
+        }
+    }
+
     public function get_archive_page($fallback = 'explore')
     {
         $archive_path = '';
@@ -149,9 +180,16 @@ class Controller
         return $archive_path ?: $fallback;
     }
 
-    public function get_archive_name($fallback = 'Archive')
+    public function get_archive_name()
     {
-        $page = $this->get_archive_page_data();
+        $fallback      = 'Explore Directory';
+        $page          = $this->get_archive_page_data();
+        $template_type = $this->get_template_type();
+
+        if ($template_type === 'post') {
+            return $page->post_title ?? post_type_archive_title('', false) . ' Directory';
+        }
+
         return $page->post_title ?? $fallback;
     }
 

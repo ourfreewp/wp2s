@@ -1,0 +1,16 @@
+.wp-block-wp2s-padded-text {
+    display: unset !important;
+}
+
+.wp2s-padded-text {
+    > * {
+        font-family: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        text-align: inherit;
+        display: inline;
+        padding: var(--wp2s-padded-text-padding-y, .5rem) var(--wp2s-padded-text-padding-x, .5rem);
+        box-decoration-break: clone;
+        -webkit-box-decoration-break: clone;
+    }
+}

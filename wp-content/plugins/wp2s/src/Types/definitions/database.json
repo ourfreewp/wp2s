@@ -1,0 +1,8 @@
+{
+    "singular": "Database",
+    "plural": "Databases",
+    "archive": "databases",
+    "rest": "databases",
+    "single": "database",
+    "type": "database"
+}

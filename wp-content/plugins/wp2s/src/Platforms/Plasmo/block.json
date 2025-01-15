@@ -1,0 +1,22 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/plasmo-platform",
+    "title": "Plasmo",
+    "category": "uncategorized",
+    "icon": "uncategorized",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "blockstudio": true
+}

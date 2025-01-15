@@ -29,7 +29,7 @@
                 "options": [
                     {
                         "value": "1",
-                        "label": "One",
+                        "label": "One - Archive",
                         "innerBlocks": [
                             {
                                 "name": "core/group",
@@ -53,6 +53,46 @@
                                         }
                                     },
                                     "backgroundColor": "light",
+                                    "layout": {
+                                        "type": "constrained"
+                                    }
+                                },
+                                "innerBlocks": [
+                                    {
+                                        "name": "core/group",
+                                        "attributes": {
+                                            "metadata": {
+                                                "name": "Content"
+                                            },
+                                            "align": "wide",
+                                            "layout": {
+                                                "type": "default"
+                                            }
+                                        },
+                                        "innerBlocks": [
+                                            {
+                                                "name": "wp2s/archive-name"
+                                            },
+                                            {
+                                                "name": "wp2s/archive-description"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "value": "2",
+                        "label": "Two - Directory",
+                        "innerBlocks": [
+                            {
+                                "name": "core/group",
+                                "attributes": {
+                                    "metadata": {
+                                        "name": "Inner"
+                                    },
+                                    "align": "full",
                                     "layout": {
                                         "type": "constrained"
                                     }

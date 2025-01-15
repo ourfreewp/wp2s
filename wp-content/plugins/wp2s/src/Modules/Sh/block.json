@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-sh",
-    "title": "WP2 sh",
+    "title": "sh",
     "category": "module",
     "icon": "star-filled",
     "description": "",

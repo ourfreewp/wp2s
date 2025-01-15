@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-report",
-    "title": "WP2 Report",
+    "title": "Report",
     "category": "module",
     "icon": "star-filled",
     "description": "",

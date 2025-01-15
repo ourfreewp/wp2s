@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-buzz",
-    "title": "WP2 Buzz",
+    "title": "Buzz",
     "category": "module",
     "icon": "star-filled",
     "description": "",

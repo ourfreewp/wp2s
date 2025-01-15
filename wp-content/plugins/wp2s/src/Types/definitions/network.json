@@ -1,0 +1,8 @@
+{
+    "singular": "Network",
+    "plural": "Networks",
+    "archive": "networks",
+    "rest": "networks",
+    "single": "network",
+    "type": "network"
+}

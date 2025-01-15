@@ -6,10 +6,10 @@ class Controller {
     private $textdomain = 'wp2s';
     private $type       = 'wp2s_host';
     private $slug       = 'host';
-    private $archive    = 'hosts';
+    private $archive    = 'hosting';
     private $singular   = 'Host';
     private $plural     = 'Hosts';
-    private $menu       = 'Hosts';
+    private $menu       = 'Hosting';
     private $icon       = 'dashicons-cloud';
 
     public function extend_post_type() {

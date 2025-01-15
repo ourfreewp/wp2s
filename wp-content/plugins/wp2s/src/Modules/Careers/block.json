@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-careers",
-    "title": "WP2 Careers",
+    "title": "Careers",
     "category": "module",
     "icon": "star-filled",
     "description": "",

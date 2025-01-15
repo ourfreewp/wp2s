@@ -1,0 +1,8 @@
+{
+    "singular": "Subdomain",
+    "plural": "Subdomains",
+    "archive": "subdomains",
+    "rest": "subdomains",
+    "single": "subdomain",
+    "type": "subdomain"
+}

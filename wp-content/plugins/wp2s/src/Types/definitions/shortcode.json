@@ -1,0 +1,8 @@
+{
+    "singular": "Shortcode",
+    "plural": "Shortcodes",
+    "archive": "shortcodes",
+    "rest": "shortcodes",
+    "single": "shortcode",
+    "type": "shortcode"
+}

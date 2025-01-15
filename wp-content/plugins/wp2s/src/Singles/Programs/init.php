@@ -12,9 +12,37 @@ class Controller {
     private $plural     = 'Programs';
     private $menu       = 'Programs';
     private $icon       = 'dashicons-money-alt';
+    private $archive_query      = [
+        'posts_per_page' => -1,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+    ];
+
+    public function __construct() {
+        $this->set_archive_query();
+    }
 
     public function extend_post_type() {
         add_filter( 'register_post_type_args', [ $this, 'modify_post_type' ], 10, 2 );
+    }
+
+    public function set_archive_query()
+    {
+        add_action('pre_get_posts', function ($query) {
+
+            $archive_query = $this->archive_query;
+
+            if (
+                !is_admin() && 
+                $query->is_main_query() && 
+                $query->is_post_type_archive($this->type)
+            ) {
+                $query->set('posts_per_page', $archive_query['posts_per_page']);
+                $query->set('orderby', $archive_query['orderby']);
+                $query->set('order', $archive_query['order']);
+                $query->set('post_status', 'publish');
+            }
+        });
     }
 
     public function modify_post_type( $args, $post_type ) {

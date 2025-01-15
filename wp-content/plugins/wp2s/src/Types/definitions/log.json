@@ -1,0 +1,8 @@
+{
+    "singular": "Log",
+    "plural": "Logs",
+    "archive": "logs",
+    "rest": "logs",
+    "single": "log",
+    "type": "log"
+}

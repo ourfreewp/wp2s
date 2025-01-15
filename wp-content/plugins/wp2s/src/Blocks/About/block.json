@@ -1,0 +1,76 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/about",
+    "title": "About",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "type": "select",
+                "label": "Tag",
+                "id": "tag",
+                "fallback": "div",
+                "default": "div",
+                "options": [
+                    {
+                        "label": "H1",
+                        "value": "h1"
+                    },
+                    {
+                        "label": "H2",
+                        "value": "h2"
+                    },
+                    {
+                        "label": "H3",
+                        "value": "h3"
+                    },
+                    {
+                        "label": "H4",
+                        "value": "h4"
+                    },
+                    {
+                        "label": "H5",
+                        "value": "h5"
+                    },
+                    {
+                        "label": "H6",
+                        "value": "h6"
+                    },
+                    {
+                        "label": "P",
+                        "value": "p"
+                    },
+                    {
+                        "label": "DIV",
+                        "value": "div"
+                    },
+                    {
+                        "label": "SPAN",
+                        "value": "span"
+                    }
+                ]
+            }
+        ]
+    }
+}

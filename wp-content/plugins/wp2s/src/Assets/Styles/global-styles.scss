@@ -11,10 +11,20 @@
 @import "../../node_modules/bootstrap/scss/helpers";
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
+
+@import "../Styles/scss/Elements/sections";
+
+@import "../Styles/scss/Utilities/margins";
+
+@import "../Styles/scss/entities";
 @import "../Styles/scss/typography";
 
-
+@import "../Styles/scss/Blocks/card";
 @import "../Styles/scss/Blocks/navigation";
 @import "../Styles/scss/Blocks/section";
 @import "../Styles/scss/Blocks/site-blocks";
 @import "../Styles/scss/Blocks/sitemap";
+
+
+@import "../Styles/scss/Blocks/post-template";
+@import "../Styles/scss/Blocks/archive-name";

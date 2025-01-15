@@ -1,0 +1,8 @@
+{
+    "singular": "Product Variant",
+    "plural": "Product Variants",
+    "archive": "product-variants",
+    "rest": "product-variants",
+    "single": "product-variant",
+    "type": "product_variant"
+}

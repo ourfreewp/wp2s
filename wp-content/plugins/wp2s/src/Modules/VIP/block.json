@@ -1,7 +1,7 @@
 {
     "$schema": "https://app.blockstudio.dev/schema",
     "name": "wp2s/wp2-vip",
-    "title": "WP2 VIP",
+    "title": "VIP",
     "category": "module",
     "icon": "star-filled",
     "description": "",

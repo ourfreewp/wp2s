@@ -1,0 +1,8 @@
+{
+    "singular": "Environment",
+    "plural": "Environments",
+    "archive": "environments",
+    "rest": "environments",
+    "single": "environment",
+    "type": "environment"
+}

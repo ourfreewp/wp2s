@@ -1,0 +1,8 @@
+{
+    "singular": "Capability",
+    "plural": "Capabilities",
+    "archive": "capabilities",
+    "rest": "capabilities",
+    "single": "capability",
+    "type": "capability"
+}

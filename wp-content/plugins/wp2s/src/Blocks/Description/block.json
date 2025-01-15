@@ -1,0 +1,35 @@
+{
+    "$schema": "https://app.blockstudio.dev/schema",
+    "name": "wp2s/description",
+    "title": "Description",
+    "category": "text",
+    "icon": "star-filled",
+    "description": "",
+    "supports": {
+        "className": false,
+        "customClassName": true,
+        "align": [
+            "full",
+            "wide"
+        ],
+        "renaming": true,
+        "color": {
+            "background": true,
+            "text": true
+        }
+    },
+    "attributes": {
+        "align": {
+            "type": "string",
+            "default": "full"
+        }
+    },
+    "blockstudio": {
+        "attributes": [
+            {
+                "type": "richtext",
+                "id": "description"
+            }
+        ]
+    }
+}

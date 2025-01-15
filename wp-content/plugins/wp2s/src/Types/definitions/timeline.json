@@ -1,0 +1,8 @@
+{
+    "singular": "Timeline",
+    "plural": "Timelines",
+    "archive": "timelines",
+    "rest": "timelines",
+    "single": "timeline",
+    "type": "timeline"
+}

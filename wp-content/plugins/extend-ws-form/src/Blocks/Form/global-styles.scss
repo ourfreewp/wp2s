@@ -24,3 +24,38 @@
     width: 100%;
     box-sizing: border-box;
 }
+
+.wsf-form .wsf-tile {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.wsf-form .wsf-section > legend {
+    display: flex;
+    line-height: var(--wp--custom--line-height--heading);
+    width: 100%;
+    font-size: var(--wp--custom--font-size--heading-4);
+    font-weight: bold;
+    padding-bottom: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid var(--wp--preset--color--accent-1);
+}
+
+.wsf-form {
+    .wsf-alert {
+        p {
+            font-size: var(--wp--preset--font-size--alert-text);
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .wsf-alert-information {
+    
+        }
+    }
+    
+}

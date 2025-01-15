@@ -1,0 +1,8 @@
+{
+    "singular": "Beacon",
+    "plural": "Beacons",
+    "archive": "beacons",
+    "rest": "beacons",
+    "single": "beacon",
+    "type": "beacon"
+}
